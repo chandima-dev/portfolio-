@@ -1,0 +1,158 @@
+.footer {
+  background-color: #181419; /* Adjust as needed to match site colors */
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footerSection {
+  flex: 1 1 200px; /* Grow and shrink as needed, with a base width of 200px */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 250px; /* Ensures sections don't get too narrow */
+}
+
+.footerSection h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footerSection p, .footerSection li {
+  font-size: 14px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center; /* Aligns icons with text */
+}
+
+.footerSection p svg, .footerSection li svg {
+  margin-right: 10px;
+  min-width: 20px; /* Ensures consistent spacing */
+}
+
+.footerSection a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerSection a:hover {
+  color: #FF7F00;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletterForm input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.newsletterForm button {
+  padding: 10px;
+  background-color: #FF7F00;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.newsletterForm button:hover {
+  background-color: #ff9a33;
+}
+
+.socialIcons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcons a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #FF7F00;
+}
+
+.copyright {
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: left; /* Changed from left to left */
+  }
+
+  .footerSection {
+    padding: 15px 0;
+    text-align: left; /* Changed from left to center */
+    min-width: unset;
+  }
+
+  h4 {
+    text-align: ;
+    color: #FF7F00;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .newsletterForm {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; /* Center the form */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items within the form */
+    text-align: center;
+    justify-content: center;
+  }
+
+  .newsletterForm input[type="email"],
+  .newsletterForm button {
+    width: 100%; /* Ensure both input and button are full width */
+  }
+
+  .newsletterForm input[type="email"] {
+    box-sizing: border-box;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+  .newsletterTitle {
+    text-align: center; /* Centers the Newsletter heading horizontally */
+  }
+}

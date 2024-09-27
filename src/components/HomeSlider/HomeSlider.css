@@ -1,0 +1,217 @@
+/* HomeSlider.css */
+
+/* Base Slider Styles */
+.slider {
+  width: 100%;
+  height: 75vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slide Styles */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Initially hidden */
+  transform: translateZ(-10px);
+  transition: all 4s ease;
+}
+
+/* Current Slide Visible */
+.slide.current {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Image Styling */
+.slide img.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Content Styling */
+.content {
+  position: absolute;
+  top: 23rem;
+  left: 5rem;
+  opacity: 0;
+  width: 50%;
+  color: #fff;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.3);
+  animation: slide-up 1s ease 0.5s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide.current .content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-6rem); /* Moves content up as per animation */
+}
+
+/* Slide-Up Animation */
+@keyframes slide-up {
+  0% {
+    visibility: visible;
+    top: 23rem;
+  }
+  100% {
+    visibility: visible;
+    top: 17rem;
+  }
+}
+
+/* Navigation Arrows */
+.arrow {
+  border: 2px solid white;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.arrow:hover {
+  background-color: #fff;
+  color: #777;
+}
+
+.next {
+  top: 35%;
+  right: 1.5rem;
+}
+
+.prev {
+  top: 35%;
+  left: 1.5rem;
+}
+
+/* Horizontal Rule within Content */
+.content hr {
+  height: 2px;
+  background: white;
+  width: 50%;
+  margin: 1rem 0;
+}
+
+/* Button Styling (Assuming --btn and --btn-primary are defined elsewhere) */
+.--btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.--btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile Responsive Styles for 768px and Below */
+@media screen and (max-width: 768px) {
+
+  /* Slider takes full viewport height */
+  .slider {
+    height: 100vh; /* Full viewport height */
+  }
+
+  /* Remove 3D Transform and ensure full height */
+  .slide {
+    transform: translateZ(0); /* Remove 3D transform for simplicity */
+    height: 100%; /* Ensure slides fill the slider's height */
+  }
+
+  /* Image covers entire slide area without distortion */
+  .slide img.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+  }
+
+  /* Adjust Content Box Positioning and Size */
+  .content {
+    top: 15rem; /* Adjust vertical positioning */
+    left: 2rem; /* Reduce horizontal positioning */
+    width: 90%; /* Increase width for better readability */
+    padding: 2rem; /* Reduce padding to save space */
+    font-size: 1rem; /* Adjust font size for readability */
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker background for better contrast */
+    transform: translateY(0); /* Reset transform */
+    opacity: 0; /* Reset opacity */
+    visibility: hidden; /* Hide by default */
+  }
+
+  /* Ensure Content is Visible in Current Slide */
+  .slide.current .content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-6rem); /* Moves content up as per animation */
+  }
+  image{
+    height: 1003vh;
+  }
+  /* Navigation Arrows Resizing and Repositioning */
+  .arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 1px;
+    font-size: 0.8rem;
+  }
+
+  .next {
+    right: 0.5rem; /* Move closer to the edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+  }
+
+  .prev {
+    left: 0.5rem; /* Move closer to the edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+  }
+
+  /* Horizontal Rule Adjustment */
+  .content hr {
+    width: 100%; /* Make HR span full width */
+    margin: 1rem 0; /* Add vertical spacing */
+  }
+
+  /* Animation Timing Adjustment */
+  .content {
+    animation: slide-up 1s ease 0.3s; /* Slightly faster animation */
+  }
+
+  /* Further Adjustments for Even Smaller Devices (600px and Below) */
+  @media screen and (max-width: 600px) {
+    .content {
+      top: 12rem; /* Further adjust vertical positioning */
+      left: 1rem; /* Further reduce horizontal positioning */
+      width: 95%; /* Maximize content width */
+      padding: 1.5rem; /* Further reduce padding */
+      font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    .arrow {
+      width: 1.2rem;
+      height: 1.2rem;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+

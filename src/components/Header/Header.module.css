@@ -1,0 +1,228 @@
+.header {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181419;
+  padding: 1px 40px 20px;
+  position: relative;
+  z-index: 10; 
+}
+
+.topBar {
+  background-color: #181419;
+  color: #fff;
+  padding: 8px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: -10px;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.contactInfo span {
+  margin-left: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contactInfo span svg {
+  margin-right: 5px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+.logo span {
+  color: #FF7F00;
+  font-size: 45px;
+  font-weight: bold;
+  /* margin-bottom: 3%; */
+  /* margin-top: %;  */
+}
+
+.navbar {
+  display:block !important;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  transition: max-height 0.3s ease;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-grow: 1;
+  /* margin-top: -1%; */
+  margin-top: -3vh;
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover, .navbar ul li a:hover::after {
+  color: #FF7F00;
+  width: 100%;
+}
+
+.navbar ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FF7F00;
+  transition: width 0.3s;
+}
+
+.socialMedia {
+  position: absolute;  /* Positions social media icons at the top right */
+  right: 40px;         /* Adjust this value based on padding/margin */
+  top: 50%;            /* Center vertically */
+  transform: translateY(-50%);
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.socialMedia a {
+  color: #fff;
+  font-size: 15px;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.socialMedia a:hover {
+  color: #FF7F00;
+}
+
+.menuToggle {
+  display: none;
+  font-size: 25px;
+  margin-top: 4%;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    display: none; /* Hide top bar on mobile */
+  }
+  .socialMedia{
+    display: none;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin-bottom: -2%;
+    margin-top: 5%; */
+  }
+
+  .navbar {
+    position: absolute; /* Position navbar absolutely */
+    top: 100px; /* Adjust as necessary to position it below the header */
+    left: 0;
+    right: 0;
+    background-color: #181419; /* Match the header's background */
+    z-index: 9; /* Set a lower z-index than the header */
+    max-height: 0; /* Initially hide it */
+    overflow: hidden; /* Prevent overflow */
+    transition: max-height 0.3s ease; /* Smooth transition */
+    background-color: #ffffff;
+  }
+  .navbar.navOpen {
+    max-height: 300px; /* Adjust this for the height of your dropdown */
+  }
+  .logo span {
+    color: #FF7F00;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 3%;
+    margin-top: 5%; 
+    padding-right: 20%;
+  }
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar ul li {
+    text-align: left;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    color: #000000;
+    padding: 5px 20px;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .navbar ul li a:hover, .navbar ul li a:hover::after {
+    color: #FF7F00;
+    width: 90%;
+  }
+  
+  .navbar ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FF7F00;
+    transition: width 0.3s;
+  }
+  .socialMedia {
+    position: static;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .menuToggle {
+    display: block;
+    position: absolute;
+    right: 40px;
+    top: 35%; /* Adjust this value as needed to align with the 'Home' link */
+    transform: translateY(-50%);
+    z-index: 11;
+  }
+  .openButton,
+  .closeButton {
+    font-size: 24px; /* Adjust size as needed */
+    color: #ffffff; /* Change color as needed */
+  }
+
+  .openButton {
+    display: block; /* Show open button */
+  }
+
+  .closeButton {
+    margin-top: 40%;
+  }
+}
