@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './SubSlider.css';
 
-const SubSlider = ({ title, description, customStyles }) => {
+const SubSlider = ({ title, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
@@ -24,10 +24,10 @@ const SubSlider = ({ title, description, customStyles }) => {
   return (
     <div className="sub-slideshow-container">
       <img src={images[currentIndex]} alt="slideshow" className="sub-slide" />
-      <div className="sub-slideshow-text" style={customStyles.textStyle}>
+      <div className="sub-slideshow-text" >
         {title}
       </div>
-      <div className="sub-slideshow-text-para1" style={customStyles.paraStyle}>
+      <div className="sub-slideshow-text-para1">
         {description}
       </div>
     </div>

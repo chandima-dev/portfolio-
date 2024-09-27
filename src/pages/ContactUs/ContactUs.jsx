@@ -36,19 +36,6 @@ const ContactUs = () => {
     );
   };
 
-  // Define custom styles for SubSlider
-  const customStyles = {
-    textStyle: {
-      // top: '80%', // Adjust position as needed
-      // left: '30%', // Center horizontally
-      // transform: 'translate(-50%, -50%)', // Adjust for centering
-    },
-    paraStyle: {
-      // left: '94vh', // Adjust position as needed
-      // bottom: '10%', // Adjust position as needed
-      // transform: 'translateX(-50%)', // Adjust for centering
-    },
-  };
 
   return (
     <>
@@ -56,7 +43,7 @@ const ContactUs = () => {
       <SubSlider 
         title="Connect with Us" 
         description="We’re Here for Consultations, Collaborations, and Your Inquiries" 
-        customStyles={customStyles} // Pass custom styles here
+        // customStyles={customStyles} // Pass custom styles here
       />
 
       <StyledContainer>
