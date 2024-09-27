@@ -166,6 +166,9 @@ export const StyledSocialSection = styled.div`
 
     p {
       font-size: 1rem; /* Adjust paragraph size for mobile */
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 `;

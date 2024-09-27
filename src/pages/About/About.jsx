@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <div>
       <SubSlider 
-        title="Who Are We" 
+        title="Who We Are" 
         description="We are Structural Engineering Consultants." 
       />
       {/* Other about us page content */}
