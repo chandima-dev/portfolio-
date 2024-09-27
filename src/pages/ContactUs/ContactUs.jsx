@@ -73,8 +73,8 @@ const ContactUs = () => {
       
       {/* Social Media Section */}
       <StyledSocialSection>
-        <h2>Follow our social network.</h2>
-        <p>Stay in touch with our projects and services.</p>
+        <h2>Follow Our Social Network</h2>
+        <p>Stay in touch with our projects and services</p>
         <div>
           <StyledSocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <FaFacebook size={40} />

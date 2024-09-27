@@ -104,7 +104,15 @@
   text-align: center;
   width: 100%;
 }
+.copyright {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+.copyright p {
+  text-align: center;
+}
 @media (max-width: 768px) {
   .footerContent {
     flex-direction: column;
@@ -112,11 +120,15 @@
   }
 
   .footerSection {
-    padding: 15px 0;
+    padding: 15px;
     text-align: left; /* Changed from left to center */
     min-width: unset;
   }
-
+  .copyright p {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center align the text */
+  }
   h4 {
     text-align: ;
     color: #FF7F00;

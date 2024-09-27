@@ -7,6 +7,7 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
           <h4>Contact Info</h4>
+          <br></br>
           <p><FaMapMarkerAlt /> 1526/6, Crest Field Garden, Malambe Rd, Kottawa</p>
           <p><FaEnvelope /> <a href="mailto:info@chanlk.com">info@chalk.com</a></p>
           <p><FaPhone /> <a href="tel:+94705901816">+94 70 590 1816</a></p>
@@ -17,8 +18,7 @@ const Footer = () => {
           <ul>
             <li><a href="#about">About Us</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#news">News & Blogs</a></li>
+            <li><a href="#services">Contact Us</a></li>
           </ul>
         </div>
         <div className={styles.footerSection}>
@@ -32,6 +32,7 @@ const Footer = () => {
         </div>
         <div className={styles.footerSection}>
           <h4 className={styles.newsletterTitle}>Newsletter</h4>
+          <br></br>
           <p>Sign up for our newsletter to receive updates, news, and knowledge base.</p>
           <form className={styles.newsletterForm}>
             <input type="email" placeholder="Enter your email" required />
@@ -45,7 +46,10 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.copyright}>
-        <p>&copy; {new Date().getFullYear()} Falcon Engineering. All rights reserved.</p>
+        <p>
+          <span>&copy; {new Date().getFullYear()} Falcon Engineering.</span>
+          <span>All rights reserved.</span>
+        </p>
       </div>
     </footer>
   );

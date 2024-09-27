@@ -8,7 +8,7 @@ const AboutUs = () => {
     <div>
       <SubSlider 
         title="Who We Are" 
-        description="We are Structural Engineering Consultants." 
+        description="We are Structural Engineering Consultants" 
       />
       {/* Other about us page content */}
     </div>
