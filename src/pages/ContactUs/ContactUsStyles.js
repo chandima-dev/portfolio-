@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
 
   @media (max-width: 768px) {
     height: auto; // Adjust height for smaller screens
-    margin-top: -250px;
+    margin-top: -260px;
     padding: 10px;
     position: relative;
     z-index: 10;
@@ -120,7 +120,9 @@ export const StyledFormHeader = styled.div`
 
   @media (max-width: 768px) {
     h1 {
-      font-size: 2rem;
+      font-size: 28px;
+      text-align: center;
+
     }
   }
 `;

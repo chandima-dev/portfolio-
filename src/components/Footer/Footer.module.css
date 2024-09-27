@@ -127,8 +127,7 @@
   .copyright p {
     font-size: small;
   }
-  h4 {
-    text-align: ;
+  h4 { 
     color: #FF7F00;
     text-transform: uppercase;
     letter-spacing: 0.9px;
@@ -137,6 +136,7 @@
 
   p {
     text-align: left;
+    text-align: center;
   }
 
   .newsletterForm {
