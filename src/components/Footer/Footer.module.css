@@ -125,9 +125,7 @@
     min-width: unset;
   }
   .copyright p {
-    display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    align-items: center; /* Center align the text */
+    font-size: small;
   }
   h4 {
     text-align: ;

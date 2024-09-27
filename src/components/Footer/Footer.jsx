@@ -46,10 +46,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.copyright}>
-        <p>
-          <span>&copy; {new Date().getFullYear()} Falcon Engineering.</span>
-          <span>All rights reserved.</span>
-        </p>
+        <p>&copy; {new Date().getFullYear()} Falcon Engineering. All rights reserved.</p>
       </div>
     </footer>
   );
