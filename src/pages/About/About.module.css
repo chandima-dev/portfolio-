@@ -1,0 +1,194 @@
+.aboutUsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 100px; /* Adjust padding as needed */
+  }
+  
+  .aboutUsContent {
+    display: flex;
+    max-width: 1200px; /* Adjust maximum width as needed */
+    width: 100%; /* Ensure it uses full available width */
+  }
+  
+  .aboutUsImages {
+    flex: 1; /* Take up remaining space */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px; /* Space between images */
+    padding-right: 20px; /* Spacing between images and text */
+  }
+  
+  .imageSquare {
+    position: relative; /* For any future overlay if needed */
+    overflow: hidden; /* Ensure image doesn't overflow the square */
+    aspect-ratio: 1; /* Makes the squares responsive */
+  }
+  
+  .largeImage {
+    grid-column: span 2; /* Span two columns */
+    height: 300px; /* Adjust height as needed */
+    width: 100%;
+  }
+  
+  .largeImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area */
+  }
+  
+  .imageSquare img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the square without distortion */
+  }
+  
+  .aboutUsText {
+    flex: 1; /* Take up remaining space */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center items vertically */
+    padding: 20px; /* Optional: Add padding for spacing */
+  }
+  
+  .aboutUsText h2 {
+    margin-top: 0; /* Remove margin from top */
+    font-size: 60px;
+    font-weight: bold;
+  }
+  
+  .aboutUsText p {
+    margin: 0; /* Remove margin for paragraph */
+    padding: 0; /* Optional: Add padding for better text flow */
+    font-size: 25px;
+    font-weight: 100;
+    text-align: justify;
+  }
+  
+  .boldText {
+    font-weight: bold; /* Make the text bold */
+    color: #000000; /* Change this to your desired color (e.g., red) */
+  }
+  
+  .seTeamTitle {
+    text-align: center; /* Center the title */
+    font-size: 36px; /* Adjust the title size */
+    margin-top: 50px; /* Space above the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  .seTeamContainer {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    gap: 400px; /* Space between team members */
+    padding: 20px; /* Optional padding */
+  }
+  
+  .seTeamMember {
+    text-align: center; /* Center align the text */
+    max-width: 250px; /* Limit width of each member */
+  }
+  
+  .seTeamImage {
+    width: 50px; /* Set width */
+    height: 50px; /* Set height */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+    margin-bottom: 15px; /* Space below the image */
+  }
+  
+  /* Animation Styles */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation: fadeIn 1s forwards;
+  }
+  
+  .slideInLeft {
+    animation: slideInLeft 0.5s forwards;
+  }
+  
+  .slideInUp {
+    animation: slideInUp 0.5s forwards;
+  }
+  
+  /* Mobile View Adjustments */
+  @media (max-width: 768px) {
+    .aboutUsContainer {
+      display: flex;
+      justify-content: center;
+      padding: 0 10px 10px; /* Adjust padding as needed */
+      margin-top: -230px;
+    }
+    
+    .aboutUsContent {
+      flex-direction: column; /* Stack elements vertically */
+    }
+  
+    .aboutUsImages {
+      display: flex; /* Change to flex for stacking images */
+      flex-direction: column; /* Stack images vertically */
+      padding-right: 0; /* Remove right padding */
+      height: auto; 
+      width: auto; 
+    }
+  
+    .imageSquare {
+      width: 100%; /* Make images full width */
+      margin-bottom: 15px; /* Space between images */
+    }
+  
+    .aboutUsText h2 {
+      font-size: 32px; /* Smaller font size for mobile */
+      text-align: center; /* Center title */
+    }
+  
+    .aboutUsText p {
+      font-size: 18px; /* Smaller font size for mobile */
+      text-align: justify; /* Maintain justified text */
+    }
+  
+    .seTeamContainer {
+      flex-direction: column; /* Stack team members vertically */
+      gap: 20px; /* Adjust space between members */
+    }
+  
+    .seTeamMember {
+      max-width: 100%; /* Allow team members to take full width */
+    }
+  
+    .seTeamImage {
+      width: 40px; /* Adjust image size for mobile */
+      height: 40px; /* Adjust image size for mobile */
+    }
+  }
+  

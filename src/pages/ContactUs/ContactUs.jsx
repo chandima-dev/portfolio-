@@ -52,7 +52,7 @@ const ContactUs = () => {
             <StyledFormHeader>
               <h1>We're here to help</h1>
             </StyledFormHeader>
-            <p>Need assistance or have any questions?</p>
+            <p>Whether you have a project in mind or need expert guidance on an upcoming design, we’re here to help</p>
             <p>Send us a message, and our team will get back to you as soon as possible!</p>
             <form ref={form} onSubmit={sendEmail}>
               <label htmlFor="user_name">Name</label>

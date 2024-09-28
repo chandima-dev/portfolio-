@@ -7,7 +7,7 @@ export const StyledContainer = styled.div`
   height: 100vh;
   background-color: #ffffff;
   ${'' /* padding: 10px; */}
-  margin-top: -100px;
+  ${'' /* margin-top: -10px; */}
   position: relative;
   z-index: 10; // Ensure it stays above the slideshow
 
@@ -87,6 +87,10 @@ export const StyledFormSection = styled.div`
     button {
       width: 106%;
     }
+    p{
+      text-align:center;
+      margin-left:15px;
+    }
   }
 `;
 
@@ -122,7 +126,7 @@ export const StyledFormHeader = styled.div`
     h1 {
       font-size: 28px;
       text-align: center;
-
+      margin-left: 1px;
     }
   }
 `;
