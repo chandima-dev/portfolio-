@@ -72,7 +72,7 @@
   .seTeamTitle {
     text-align: center; /* Center the title */
     font-size: 36px; /* Adjust the title size */
-    margin-top: 50px; /* Space above the title */
+    margin-top: -20px; /* Space above the title */
     margin-bottom: 20px; /* Space below the title */
     font-weight: bold; /* Make the title bold */
   }
@@ -80,7 +80,7 @@
   .seTeamContainer {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center horizontally */
-    gap: 400px; /* Space between team members */
+    gap: 300px; /* Space between team members */
     padding: 20px; /* Optional padding */
   }
   
