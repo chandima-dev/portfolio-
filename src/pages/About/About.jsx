@@ -13,7 +13,7 @@ const AboutUs = () => {
       const images = imageRef.current.children;
       const textElement = textRef.current;
       const titleElement = teamTitleRef.current;
-      
+
       // Check if the text element is in the viewport
       if (textElement.getBoundingClientRect().top < window.innerHeight) {
         textElement.classList.add(styles.fadeIn);
@@ -45,6 +45,26 @@ const AboutUs = () => {
     };
   }, []);
 
+  // Team member details
+  const teamMembers = [
+    {
+      name: 'Chandima Sooriyaarachchi',
+      role: 'Managing Director',
+      position: 'Senior Structural Engineer',
+      education: 'BSc Hons Civil Engineering',
+      credentials: 'AMIE (SL), A. Eng (ECSL), AMSSE (SL)',
+      image: '/images/profile/avator.jpg', // Use different images for different members
+    },
+    {
+      name: 'Sulochana Sooriyaarachchi',
+      role: 'Technical Director',
+      position: 'Structural Engineer',
+      education: 'BSc Civil Engineering',
+      credentials: 'MIE (SL), C. Eng (ECSL)',
+      image: '/images/profile/avator.jpg', // Use different images for different members
+    },
+  ];
+
   return (
     <div>
       <SubSlider 
@@ -56,15 +76,15 @@ const AboutUs = () => {
           <div className={styles.aboutUsImages} ref={imageRef}>
             <div className={`${styles.imageSquare} ${styles.largeImage}`}>
               <img 
-                src="/public/images/aboutUs/about1.jpeg" 
+                src="/images/aboutUs/about1.jpeg" 
                 alt="Falcon Engineering" 
               />
             </div>
             <div className={styles.imageSquare}>
-              <img src="/public/images/aboutUs/about2.jpeg" alt="Falcon Engineering 2" />
+              <img src="/images/aboutUs/about2.jpeg" alt="Falcon Engineering 2" />
             </div>
             <div className={styles.imageSquare}>
-              <img src="/public/images/aboutUs/about3.jpeg" alt="Falcon Engineering 3" />
+              <img src="/images/aboutUs/about3.jpeg" alt="Falcon Engineering 3" />
             </div>
           </div>
           <div className={styles.aboutUsText} ref={textRef}>
@@ -79,18 +99,18 @@ const AboutUs = () => {
       {/* New Section for Falcon Engineering Team */}
       <h2 className={styles.seTeamTitle} ref={teamTitleRef}>Falcon Engineering Team</h2>
       <div className={styles.seTeamContainer}>
-        {['Chandima Sooriyaarachchi', 'Sasanka Tharaka'].map((name, index) => (
+        {teamMembers.map((member, index) => (
           <div className={styles.seTeamMember} ref={el => teamMembersRef.current[index] = el} key={index}>
             <img 
-              src="/public/images/profile/avator.jpg" 
-              alt={name} 
+              src={member.image} 
+              alt={member.name} 
               className={styles.seTeamImage}
             />
-            <h3>{name}</h3>
-            <p>Managing Director,</p>
-            <p>Senior Structural Engineer</p>
-            <p>BSc Hons Civil Engineering</p>
-            <p>AMIE (SL), A. Eng (ECSL), AMSSE (SL)</p>
+            <h3>{member.name}</h3>
+            <p>{member.role},</p>
+            <p>{member.position}</p>
+            <p>{member.education}</p>
+            <p>{member.credentials}</p>
           </div>
         ))}
       </div>
