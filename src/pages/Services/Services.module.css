@@ -1,0 +1,139 @@
+.sectionHeading {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  /* Horizontal line that will appear when the user hovers over the heading or the card container */
+  .hoverLine {
+    position: relative; /* Correcting display: relative */
+    width: calc(100% - 400px); /* Subtract margins */
+    height: 5px;
+    background-color: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin: 0 auto; /* Centers the line */
+    margin-left: 240px;
+    margin-right: 240px;
+    
+  }
+  
+  
+  /* Make the line visible when hovering on the heading or the card container */
+  .sectionHeading:hover + .hoverLine,
+  .cardContainer:hover ~ .hoverLine {
+    opacity: 1;
+  }
+  
+  .cardContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 50px 240px 50px;
+    gap: 20px;
+    position: relative;
+  }
+  
+  .card {
+    position: relative;
+    flex: 0 0 400px; /* Adjust card width to be larger */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    /* transition: transform 0.5s ease-in-out; */
+    opacity: 1;
+  }
+  
+  /* Animation for sliding in from right */
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slideInRight {
+    animation: slideInRight 0.5s ease forwards;
+  }
+  
+  /* Animation for sliding out to left */
+  @keyframes slideOutLeft {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .slideOutLeft {
+    animation: slideOutLeft 0.5s ease forwards;
+  }
+  
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height for a larger card size */
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+  }
+  
+  .imageContainer:hover .cardImage {
+    filter: blur(5px);
+  }
+  
+  .cardDescription {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    padding: 20px; /* For more padding */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .imageContainer:hover .cardDescription {
+    opacity: 1;
+  }
+  
+  .cardDescription ul {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cardDescription li {
+    margin-bottom: 10px; /* Add spacing between bullet points */
+  }
+  
+  .cardTitle {
+    padding: 10px;
+    font-size: 22px; /* Larger font size for title */
+    font-weight: bold;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd; /* Separate title visually from the image */
+  }
+  

@@ -60,6 +60,7 @@ const Header = () => {
           <ul>
             <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
             <li><Link to="/aboutus" onClick={handleLinkClick}>About Us</Link></li>
+            <li><Link to="/services" onClick={handleLinkClick}>Services</Link></li>
             <li><Link to="/projects" onClick={handleLinkClick}>Projects</Link></li>
             <li><Link to="/contactus" onClick={handleLinkClick}>Contact Us</Link></li>
           </ul>
