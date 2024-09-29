@@ -1,92 +1,163 @@
-import React, { useEffect, useState } from 'react';
-import styles from './Services.module.css';
-import { service_id_1, service_id_2, service_id_3, service_id_4, service_id_5 } from './data'; // Import all services
+import React, { useEffect, useRef, useState } from 'react';
+import styles from './Services.module.css'; // Import CSS module
+import SubSlider from '../../components/SubSlider/SubSlider';
+import servicesData from './services_data'; // Import the data
 
-const CardView = () => {
-  const services = [service_id_1, service_id_2, service_id_3, service_id_4, service_id_5]; // Combine all services
-
-  const [visibleCards, setVisibleCards] = useState(services.map(service => service.cards.slice(0, 3))); // Show 3 cards from each service
-  const [currentIndex, setCurrentIndex] = useState(new Array(services.length).fill(0)); // Track current index for all services
-  const [animateIn, setAnimateIn] = useState(false);
-  const [animateOut, setAnimateOut] = useState(false);
+const Services = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const imageRefs = useRef([useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)]);
+  const textRefs = useRef([useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)]);
 
   useEffect(() => {
-    const slideIntervals = services.map((_, serviceIndex) => {
-      if (services[serviceIndex].cards.length > 3) {
-        return setInterval(() => {
-          slideCards(serviceIndex);
-        }, 3000); // Slide every 3 seconds
-      }
-      return null;
-    });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    return () => slideIntervals.forEach(interval => clearInterval(interval)); // Clear intervals on unmount
-  }, [currentIndex]);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  const slideCards = (serviceIndex) => {
-    setAnimateOut(true); // Trigger exit animation
-    setTimeout(() => {
-      const nextIndex = (currentIndex[serviceIndex] + 1) % services[serviceIndex].cards.length;
-      const newVisibleCards = [
-        services[serviceIndex].cards[nextIndex],
-        services[serviceIndex].cards[(nextIndex + 1) % services[serviceIndex].cards.length],
-        services[serviceIndex].cards[(nextIndex + 2) % services[serviceIndex].cards.length],
-      ];
+  useEffect(() => {
+    const handleScroll = () => {
+      // Loop through all sections for animation
+      servicesData.forEach((section, index) => {
+        const imagesSection = imageRefs.current[index].current.children;
+        const textSection = textRefs.current[index].current;
 
-      setVisibleCards(prev => {
-        const updated = [...prev];
-        updated[serviceIndex] = newVisibleCards; // Update the cards for the current service
-        return updated;
+        if (textSection.getBoundingClientRect().top < window.innerHeight) {
+          // For section 4 (index 3), animate text from right to left
+          if (index === 3) {
+            textSection.classList.add(styles.slideInLeft);
+          } else {
+            textSection.classList.add(styles.slideInRight); // Text from left to right for others
+          }
+        }
+
+        for (let image of imagesSection) {
+          if (image.getBoundingClientRect().top < window.innerHeight) {
+            // For section 5 (index 4), animate images from left to right
+            if (index === 4) {
+              image.classList.add(styles.slideInRight);
+            } else {
+              image.classList.add(styles.slideInLeft); // Images from right to left for others
+            }
+          }
+        }
       });
-      setCurrentIndex(prev => {
-        const updated = [...prev];
-        updated[serviceIndex] = nextIndex;
-        return updated;
-      });
-      setAnimateOut(false); // Remove exit animation
-      setAnimateIn(true);  // Trigger enter animation
+    };
 
-      // Remove the enter animation after a short time
-      setTimeout(() => {
-        setAnimateIn(false);
-      }, 500); // Duration of the slide-in animation
-    }, 500); // Duration of the slide-out animation
-  };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-  return (
+  // JSX for Web View
+  const renderWebView = () => (
     <div>
-      {services.map((service, index) => (
-        <div key={index}>
-          <h2 className={styles.sectionHeading}>{service.title}</h2> {/* Dynamic title for each service */}
-          <div className={styles.hoverLine}></div>
-
-          <div className={styles.cardContainer}>
-            {visibleCards[index].map((card, cardIndex) => (
-              <div
-                key={card.id}
-                className={`${styles.card} ${animateOut && service.cards.length >3 && cardIndex == 2 ? styles.slideInRight : ''} ${service.cards.length >3 && animateOut && cardIndex === 0 ? styles.slideOutLeft : ''}`}
-              >
-                <div className={styles.cardTitle}>{card.title}</div>
-                <div className={styles.imageContainer}>
-                  <img src={card.image} alt={card.title} className={styles.cardImage} />
-                  <div className={styles.cardDescription}>
-                    <ul>
-                      {card.description
-                        .split('\n') // Split description by line breaks
-                        .filter(item => item.trim() !== '') // Filter out empty lines
-                        .map((item, idx) => (
-                          <li key={idx}>{item.replace('*', '').trim()}</li> // Render each description point
-                        ))}
-                    </ul>
-                  </div>
+      <SubSlider 
+        title="Explore Our Services" 
+        description="We specialize in delivering tailored solutions for the Architecture, Engineering, and Construction industry." 
+      />
+      {servicesData.map((section, index) => (
+        <div className={styles.serviceContainer} key={index}>
+          <div className={styles.serviceContent}>
+            {index % 2 === 0 ? (
+              <>
+                <div className={styles.serviceText} ref={textRefs.current[index]}>
+                  <h2>{section.title}</h2>
+                  <ul>
+                    {section.descriptionPoints.map((point, i) => {
+                      const [title, description] = point.split(': '); 
+                      return (
+                        <li key={i}>
+                          <strong>{title}:</strong> {description}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
-              </div>
-            ))}
+                <div className={styles.serviceImages} ref={imageRefs.current[index]}>
+                  {section.images.map((image, i) => (
+                    <div className={`${styles.imageSquare} ${i === 0 ? styles.largeImage : ''}`} key={i}>
+                      <img src={image} alt={`Falcon Engineering ${index + 1} - ${i + 1}`} />
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={styles.serviceImages} ref={imageRefs.current[index]}>
+                  {section.images.map((image, i) => (
+                    <div className={`${styles.imageSquare} ${i === 0 ? styles.largeImage : ''}`} key={i}>
+                      <img src={image} alt={`Falcon Engineering ${index + 1} - ${i + 1}`} />
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.serviceText} ref={textRefs.current[index]}>
+                  <h2>{section.title}</h2>
+                  <ul>
+                    {section.descriptionPoints.map((point, i) => {
+                      const [title, description] = point.split(': '); 
+                      return (
+                        <li key={i}>
+                          <strong>{title}:</strong> {description}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
         </div>
       ))}
     </div>
   );
+
+  // JSX for Mobile View
+  const renderMobileView = () => (
+    <div>
+      <SubSlider 
+        title="Explore Our Services" 
+        description="We specialize in delivering tailored solutions for the Architecture, Engineering, and Construction industry." 
+      />
+      {servicesData.map((section, index) => (
+        <div className={styles.serviceContainer} key={index}>
+          <div className={styles.serviceContent}>
+            <div className={styles.serviceText} ref={textRefs.current[index]}>
+              <h2>{section.title}</h2>
+              {section.images.map((image, i) => (
+                <div key={i}>
+                  <div className={`${styles.imageSquare} ${i === 0 ? styles.largeImage : ''}`} ref={imageRefs.current[index]}>
+                    <img src={image} alt={`Falcon Engineering ${index + 1} - ${i + 1}`} />
+                  </div>
+                  <div style={{ height: '1vh' }} /> {/* Space after image */}
+                </div>
+              ))}
+              <ul>
+                {section.descriptionPoints.map((point, i) => {
+                  const [title, description] = point.split(': '); 
+                  return (
+                    <li key={i}>
+                      <strong>{title}:</strong> {description}
+                      <div style={{ height: '1vh' }}/>
+                    </li>
+                  );
+                })}
+              </ul>
+              <div style={{ height: '15vh' }} /> {/* Space after description */}
+            </div>
+          </div>
+        </div>
+      ))}
+      <div style={{ marginBottom: '-28vh' }} /> 
+    </div>
+  );
+
+  return isMobile ? renderMobileView() : renderWebView();
 };
 
-export default CardView;
+export default Services;

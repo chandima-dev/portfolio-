@@ -1,139 +1,165 @@
-.sectionHeading {
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-    position: relative;
-  }
-  
-  /* Horizontal line that will appear when the user hovers over the heading or the card container */
-  .hoverLine {
-    position: relative; /* Correcting display: relative */
-    width: calc(100% - 400px); /* Subtract margins */
-    height: 5px;
-    background-color: #333;
+.serviceContainer {
+  display: flex;
+  justify-content: center;
+  padding: 100px; /* Adjust padding as needed */
+}
+
+.serviceContent {
+  display: flex;
+  max-width: 1200px; /* Adjust maximum width as needed */
+  width: 100%; /* Ensure it uses full available width */
+}
+
+.serviceImages {
+  flex: 1; /* Take up remaining space */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px; /* Space between images */
+  padding-right: 20px; /* Spacing between images and text */
+}
+
+.imageSquare {
+  position: relative; /* For any future overlay if needed */
+  overflow: hidden; /* Ensure image doesn't overflow the square */
+  aspect-ratio: 1; /* Makes the squares responsive */
+}
+
+.largeImage {
+  grid-column: span 2; /* Span two columns */
+  height: 300px; /* Adjust height as needed */
+  width: 100%;
+}
+
+.largeImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+.imageSquare img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the square without distortion */
+}
+
+.serviceText {
+  flex: 1; /* Take up remaining space */
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center items vertically */
+  padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.serviceText h2 {
+  margin-top: 0; /* Remove margin from top */
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.serviceText p {
+  margin: 0; /* Remove margin for paragraph */
+  padding: 0; /* Optional: Add padding for better text flow */
+  font-size: 25px;
+  font-weight: 100;
+  text-align: justify;
+}
+
+.boldText {
+  font-weight: bold; /* Make the text bold */
+  color: #000000; /* Change this to your desired color (e.g., red) */
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    margin: 0 auto; /* Centers the line */
-    margin-left: 240px;
-    margin-right: 240px;
-    
   }
-  
-  
-  /* Make the line visible when hovering on the heading or the card container */
-  .sectionHeading:hover + .hoverLine,
-  .cardContainer:hover ~ .hoverLine {
+  to {
     opacity: 1;
   }
-  
-  .cardContainer {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 50px 240px 50px;
-    gap: 20px;
-    position: relative;
-  }
-  
-  .card {
-    position: relative;
-    flex: 0 0 400px; /* Adjust card width to be larger */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    /* transition: transform 0.5s ease-in-out; */
-    opacity: 1;
-  }
-  
-  /* Animation for sliding in from right */
-  @keyframes slideInRight {
-    0% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  .slideInRight {
-    animation: slideInRight 0.5s ease forwards;
-  }
-  
-  /* Animation for sliding out to left */
-  @keyframes slideOutLeft {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-  }
-  
-  .slideOutLeft {
-    animation: slideOutLeft 0.5s ease forwards;
-  }
-  
-  .imageContainer {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Adjust height for a larger card size */
-  }
-  
-  .cardImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: filter 0.3s ease;
-  }
-  
-  .imageContainer:hover .cardImage {
-    filter: blur(5px);
-  }
-  
-  .cardDescription {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    font-size: 18px;
-    text-align: left;
-    padding: 20px; /* For more padding */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50%); /* Start from the left */
     opacity: 0;
-    transition: opacity 0.3s ease;
   }
-  
-  .imageContainer:hover .cardDescription {
+  to {
+    transform: translateX(0);
     opacity: 1;
   }
-  
-  .cardDescription ul {
-    list-style-type: disc;
-    margin: 0;
-    padding: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); /* Start from the right */
+    opacity: 0;
   }
-  
-  .cardDescription li {
-    margin-bottom: 10px; /* Add spacing between bullet points */
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .cardTitle {
-    padding: 10px;
-    font-size: 22px; /* Larger font size for title */
-    font-weight: bold;
+}
+
+.fadeIn {
+  animation: fadeIn 1s forwards;
+}
+
+.slideInLeft {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.slideInRight {
+  animation: slideInRight 0.5s forwards;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .serviceContainer {
+    flex-direction: column; /* Stack sections vertically */
+    padding: 10px 20px 0 20px; /* Adjust padding for mobile */
+    margin-top: -100px;
+    margin-bottom: 150px;
+  }
+
+  .serviceContent {
+    flex-direction: column; /* Ensure content is stacked */
+  }
+
+  .serviceImages {
+    display: block; /* Change grid to block for images */
+    padding-right: 0; /* Remove right padding */
+  }
+
+  .serviceText {
+    padding: 20px 0; /* Add vertical padding */
+    text-align: justify;
+    /* margin-left: ; */
+  }
+
+  .imageSquare {
+    width: 100%; /* Ensure images take full width */
+    margin-bottom: 1vh; /* Space after each image */
+  }
+
+  .largeImage {
+    height: auto; /* Allow height to adjust */
+  }
+
+  .serviceText h2 {
+    font-size: 30px; /* Adjust font size for mobile */
+    margin-top: -150px;
     text-align: center;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd; /* Separate title visually from the image */
   }
-  
+
+  .serviceText p {
+    font-size: 18px; /* Adjust paragraph size for mobile */
+    text-align: justify; 
+  }
+  .serviceText li {
+      margin-left: -25px;
+      /* gap: 1000px; */
+  }
+}
+
+
