@@ -16,25 +16,43 @@ import SubSlider from '../../components/SubSlider/SubSlider'; // Import the SubS
 const ContactUs = () => {
   const form = useRef();
 
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm(
+  //     "service_qg6ev47",
+  //     "template_ex2ngw5",
+  //     form.current,
+  //     "KKfkGJZKt5unB2lB-"
+  //   ).then(
+  //     (result) => {
+  //       console.log(result.text);
+  //       alert("Message sent successfully!");
+  //     },
+  //     (error) => {
+  //       console.log(error.text);
+  //       alert("Failed to send message. Please try again later.");
+  //     }
+  //   );
+  // };
+
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm(
-      "your_service_id",
-      "your_template_id",
-      form.current,
-      "your_user_id"
-    ).then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send message. Please try again later.");
-      }
-    );
+  
+    emailjs
+      .sendForm('service_fb7rcsw', 'template_2up9bic', form.current, 'KKfkGJZKt5unB2lB-')
+      .then(
+        (result) => {
+          console.log('Message sent successfully!', result.text);
+          alert('Message sent successfully!');
+        },
+        (error) => {
+          console.log('Failed to send message:', error.text);
+          alert('Failed to send message. Please try again later.');
+        }
+      );
   };
+  
 
 
   return (
@@ -58,7 +76,7 @@ const ContactUs = () => {
               <label htmlFor="user_name">Name</label>
               <input id="user_name" type="text" name="user_name" required />
               <label htmlFor="user_email">Email</label>
-              <input id="user_email" type="email" name="user_email" required />
+              <input id="user_email" type="email" name="user_email"  />
               <label htmlFor="message">Message</label>
               <textarea id="message" name="message" required></textarea>
               <button type="submit">Submit</button>
