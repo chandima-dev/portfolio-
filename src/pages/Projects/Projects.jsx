@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Fade } from 'react-awesome-reveal'; // Import the animation component
-import cardData from './data'; // Import the card data from data.js
+import cardData from './ProjectData'; // Import the card data from data.js
 
 const MultiActionAreaCard = ({ image, title, delay, index }) => {
   const navigate = useNavigate(); // Hook for navigation

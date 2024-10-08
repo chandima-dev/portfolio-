@@ -1,4 +1,4 @@
-// data.js
+// Projectdata.js
 const cardData = [
   {
     image: "/public/images/services/Architectural Design/ad (1).webp",
