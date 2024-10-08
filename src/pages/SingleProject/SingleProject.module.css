@@ -1,0 +1,73 @@
+.singleProjectsContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .projectDetails {
+    margin-top: 30px;
+  }
+  
+  .projectTitle {
+    font-size: 38px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; /* Center the title */
+  }
+  .highlightsTitle {
+    font-weight: bold; /* Makes the highlights header bold */
+    margin-top: 20px; /* Adds space above the highlights header */
+    font-size: x-large;
+  }
+  
+  .highlightsList {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Removes padding */
+    list-style-position: inside; /* Ensures bullet points inside the container */
+    padding-left: 20px; /* Adds space from the left */
+  }
+  .highlightItem {
+    margin-bottom: 10px; /* Space between each highlight */
+    flex-wrap: wrap;
+  }
+  
+  .highlightTitle {
+    color: #000000; /* Change to your desired highlight color */
+    font-weight: bold; /* Makes highlight titles bold */
+    font-size: larger;
+    display: inline-block; /* Ensures that it behaves like a block */
+  }
+  
+  .highlightDetails {
+    text-align: justify; /* Justifies the text for the details */
+    margin-bottom: 10px; /* Adds space below each detail */
+    flex: 1;
+    /* margin-left: 10px; */
+    font-size: 20px;
+    display: block;
+  }
+  .projectDescription {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: justify; /* Justify the description */
+  }
+  
+  .projectImages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* p{
+    font-size:20px;
+  } */
+  .projectImage {
+    width: 100%;
+    max-width: 1920px;
+    height: 720px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

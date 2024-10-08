@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home'; 
 import ContactUs from './pages/ContactUs/ContactUs'; 
 import Projects from './pages/Projects/Projects'; 
+import SingleProject from './pages/SingleProject/SingleProject'; 
 import Services from './pages/Services/Services'; 
 import AboutUs from './pages/About/About'; 
 import HomeSlider from './components/HomeSlider/HomeSlider'; 
@@ -35,6 +36,11 @@ const App = () => {
           <Route path="/projects" element={
             <>
               <Projects />
+            </>
+          } />
+          <Route path="/singleproject/:projectId" element={
+            <>
+              <SingleProject />
             </>
           } />
           <Route path="/services" element={
