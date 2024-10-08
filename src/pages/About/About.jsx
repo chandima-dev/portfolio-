@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './About.module.css'; // Import CSS module
 import SubSlider from '../../components/SubSlider/SubSlider';
+import { teamMembers } from './MembersData'; // Import team members data
 
 const AboutUs = () => {
   const imageRef = useRef(null);
@@ -44,34 +45,6 @@ const AboutUs = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  // Team member details
-  const teamMembers = [
-    {
-      name: 'Chandima Sooriyaarachchi',
-      role: 'Managing Director',
-      position: 'Senior Structural Engineer',
-      education: 'BSc Hons Civil Engineering',
-      credentials: 'AMIE (SL), A. Eng (ECSL), AMSSE (SL)',
-      image: '/images/profile/avator.jpg', // Use different images for different members
-    },
-    {
-      name: 'Sulochana Sooriyaarachchi',
-      role: 'Technical Director',
-      position: 'Structural Engineer',
-      education: 'BSc Civil Engineering',
-      credentials: 'MIE (SL), C. Eng (ECSL)',
-      image: '/images/profile/avator.jpg', // Use different images for different members
-    },
-    {
-      name: 'Chandima Sooriyaarachchi',
-      role: 'Managing Director',
-      position: 'Senior Structural Engineer',
-      education: 'BSc Hons Civil Engineering',
-      credentials: 'AMIE (SL), A. Eng (ECSL), AMSSE (SL)',
-      image: '/images/profile/avator.jpg', // Use different images for different members
-    },
-  ];
 
   return (
     <div>

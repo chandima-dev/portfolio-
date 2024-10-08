@@ -78,15 +78,22 @@
   }
   
   .seTeamContainer {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center horizontally */
-    gap: 300px; /* Space between team members */
-    padding: 20px; /* Optional padding */
+    display: grid; /* Switch to grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 3 members per row */
+    gap: 50px; /* Adjust space between team members */
+    padding: 20px 300px 20px 300px; /* Optional padding */
+    justify-items: center; /* Center the items */
+    justify-content: center; /* This centers the last row if it has fewer items */
+    text-align: center;
   }
   
   .seTeamMember {
     text-align: center; /* Center align the text */
     max-width: 250px; /* Limit width of each member */
+    justify-items: center; /* Center the items */
+    justify-content: center; /* This centers the last row if it has fewer items */
+    text-align: center;
+    
   }
   
   .seTeamImage {
@@ -95,6 +102,16 @@
     border-radius: 50%; /* Makes the image circular */
     object-fit: cover; /* Ensures the image covers the circle without distortion */
     margin-bottom: 15px; /* Space below the image */
+    
+  }
+  .seTeamRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .centerLastRow {
+    justify-content: center; /* Centers the last row with 1 or 2 members */
   }
   
   /* Animation Styles */
@@ -146,7 +163,7 @@
     .aboutUsContainer {
       display: flex;
       justify-content: center;
-      padding: 0 10px 10px; /* Adjust padding as needed */
+      padding: 30px 40px 10px; /* Adjust padding as needed */
       margin-top: -230px;
     }
     
@@ -178,14 +195,18 @@
     }
   
     .seTeamContainer {
-      flex-direction: column; /* Stack team members vertically */
-      gap: 20px; /* Adjust space between members */
+      grid-template-columns: repeat(1, 1fr); /* 2 members per row on mobile */
+      gap: 30px; /* Adjust space between members for mobile */
+      padding: 10px 20px 10px 10px; /* Adjust padding as needed */
+
     }
   
     .seTeamMember {
       max-width: 100%; /* Allow team members to take full width */
     }
-  
+    .seTeamTitle{
+      margin-top: 10px;
+    }
     .seTeamImage {
       width: 40px; /* Adjust image size for mobile */
       height: 40px; /* Adjust image size for mobile */
