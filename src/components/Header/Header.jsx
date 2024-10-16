@@ -36,9 +36,19 @@ const Header = () => {
     <div>
       <div className={styles.topBar}>
         <div className={styles.contactInfo}>
-          <span><FaPhone /> (+94) 70 590 1816</span>
-          <span><FaEnvelope /> info@chalk.com</span>
-          <span><FaClock /> Mon - Fri: 8:00 - 17:30</span>
+          <span>
+            <a href="tel:+94728130647">
+              <FaPhone /> (+94) 72 813 0647
+            </a>
+          </span>
+          <span>
+            <a href="mailto:falconengnarchitects@gmail.com">
+              <FaEnvelope /> falconengnarchitects@gmail.com
+            </a>
+          </span>
+          <span>
+            <FaClock /> Monday to Saturday 7.00 a.m - 00.00 a.m GMT +05:30
+          </span>
         </div>
       </div>
       <header className={styles.header}>

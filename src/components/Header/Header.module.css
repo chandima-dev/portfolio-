@@ -36,6 +36,10 @@
   margin-right: 5px;
 }
 
+.contactInfo a {
+  color: inherit;          /* Inherit color from parent */
+  text-decoration: none;   /* Remove underline */
+}
 .logo {
   display: flex;
   align-items: center;
