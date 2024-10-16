@@ -1,6 +1,8 @@
 import styles from './Footer.module.css';  // Ensure you have the CSS module set up
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebook, FaLinkedin, FaRss } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebook, FaLinkedin, FaViber, FaRss } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const Footer = () => {
   const handleLinkClick = () => {
@@ -50,7 +52,9 @@ const Footer = () => {
           <div className={styles.socialIcons}>
             <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
             <a href="https://linkedin.com" aria-label="LinkedIn"><FaLinkedin /></a>
-            <a href="https://rss.com" aria-label="RSS"><FaRss /></a>
+            <a href="https://wa.me/+94705901816" aria-label="RSS"><IoLogoWhatsapp /></a>
+            <a href="viber://chat?number=94705901816" aria-label="RSS"><FaViber /></a>
+            <a href="imo://chat?number=94705901816" aria-label="RSS"><IoChatbubbleEllipsesOutline /></a>
           </div>
         </div>
       </div>
