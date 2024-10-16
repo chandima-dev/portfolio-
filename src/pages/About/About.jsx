@@ -88,7 +88,7 @@ const AboutUs = () => {
               className={styles.seTeamImage}
             />
             <h3>{member.name}</h3>
-            <p>{member.role},</p>
+            <p>{member.role}</p>
             <p>{member.position}</p>
             <p>{member.education}</p>
             <p>{member.credentials}</p>

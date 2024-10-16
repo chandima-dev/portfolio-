@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams for URL parameters
 import SubSlider from '../../components/SubSlider/SubSlider';
 import styles from './SingleProject.module.css'; // Import CSS Module
@@ -7,6 +7,11 @@ import projects from './SingleProjectData'; // Adjust the path based on your str
 const SingleProject = () => {
   const { projectId } = useParams(); // Get the project ID from the URL parameters
   const project = projects.find((proj) => proj.id === parseInt(projectId)); // Retrieve the project details
+
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures this only runs once on component mount
 
   if (!project) {
     return <div>Project not found</div>; // Handle case where project is not found

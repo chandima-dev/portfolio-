@@ -71,3 +71,41 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
+  /* Add media query for devices with a max-width of 768px */
+@media (max-width: 768px) {
+  .singleProjectsContainer {
+    margin-top: -250px;
+    padding: 10px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Use full width on smaller devices */
+  }
+
+  .projectTitle {
+    font-size: 28px; /* Smaller title for mobile */
+  }
+
+  .projectDescription {
+    font-size: 16px; /* Smaller text for mobile */
+  }
+
+  .highlightsTitle {
+    font-size: large; /* Adjust highlight title size */
+  }
+
+  .highlightTitle {
+    font-size: medium; /* Smaller highlight titles */
+  }
+
+  .highlightDetails {
+    font-size: 16px; /* Smaller highlight details */
+    margin-right: 20px;
+  }
+
+  .projectImage {
+    height: auto; /* Allow images to resize proportionally */
+    max-width: 100%; /* Ensure images don't exceed screen width */
+  }
+
+  .projectImages {
+    gap: 10px; /* Reduce gap between images on mobile */
+  }
+}

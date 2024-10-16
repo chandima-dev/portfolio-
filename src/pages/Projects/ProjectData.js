@@ -1,64 +1,28 @@
-// Projectdata.js
 const cardData = [
   {
-    image: "/images/services/Architectural Design/ad (1).webp",
-    title: "Architectural Design",
+    image: "/images/SingleProducts/Architectural Design/423 ERIE AVENUE/Main Image.png",
+    title: "423 ERIE AVENUE, TAMPA, FLORIDA, USA RENDERING PROJECT",
     delay: 100
   },
   {
-    image: "/images/services/Architectural Design/ad (2).webp",
-    title: "Interior Design",
+    image: "/images/SingleProducts/Architectural Design/CANADIAN FARMHOUSE/MAIN IMAGE.jpg",
+    title: "CANADIAN FARMHOUSE DESIGN & RENDERING PROJECT, WADDYS & COLPITTS LTD",
     delay: 300
   },
   {
-    image: "/images/services/Architectural Design/ad (3).webp",
-    title: "Landscape Design",
+    image: "/images/SingleProducts/Architectural Design/PROPOSED ORMISTON/MAIN IMAGE.jpg",
+    title: "PROPOSED ORMISTON OFFICE, NEW ZEALAND, HARCOURTS HOVERD & CO",
     delay: 500
   },
   {
-    image: "/images/services/Architectural Design/ad (4).webp",
-    title: "Urban Design",
-    delay: 700
+    image: "/images/SingleProducts/Architectural Design/TEL AVIV, ISRAEL/MAIN IMAGE.jpg",
+    title: "TEL AVIV, ISRAEL<br/>TWO STOREY RESIDENCE DESIGN PROJECT", // Add line break and space
+    delay: 550
   },
   {
-    image: "/images/services/Architectural Design/ad (5).webp",
-    title: "Sustainable Design",
-    delay: 900
-  },
-  {
-    image: "/images/services/Architectural Design/ad (6).webp",
-    title: "Ecological Design",
-    delay: 1100
-  },
-  {
-    image: "/images/services/Architectural Design/ad (7).webp",
-    title: "Commercial Design",
-    delay: 1200
-  },
-  {
-    image: "/images/services/Engineering Design/ed (1).webp",
-    title: "Residential Design",
-    delay: 1300
-  },
-  {
-    image: "/images/services/Engineering Design/ed (2).webp",
-    title: "Healthcare Design",
-    delay: 1400
-  },
-  {
-    image: "/images/services/Engineering Design/ed (3).webp",
-    title: "Educational Design",
-    delay: 1500
-  },
-  {
-    image: "/images/services/Engineering Design/ed (4).webp",
-    title: "Recreational Design",
-    delay: 1600
-  },
-  {
-    image: "/images/services/Engineering Design/ed (5).webp",
-    title: "Cultural Design",
-    delay: 1700
+    image: "/images/SingleProducts/Architectural Design/TEXAS, USA 8 ACRES/MAIN IMAGE.png",
+    title: "TEXAS, USA 8 ACRES, QUADPLEX DESIGN PROJECT, WILMONBROS.INC",
+    delay: 600
   }
 ];
 
