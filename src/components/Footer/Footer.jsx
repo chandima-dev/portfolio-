@@ -44,7 +44,9 @@ const Footer = () => {
         <div className={styles.footerSection}>
           <h4 className={styles.newsletterTitle}>Newsletter</h4>
           <br />
-          <p>Sign up for our newsletter to receive updates, news, and knowledge base.</p>
+          <p style={{ textAlign: 'center' }}>
+            Sign up for our newsletter to receive updates, news, and knowledge base.
+          </p>
           <form className={styles.newsletterForm}>
             <input type="email" placeholder="Enter your email" required />
             <button type="submit">Get Updates</button>
