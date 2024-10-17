@@ -70,9 +70,10 @@ const AboutUs = () => {
           </div>
           <div className={styles.aboutUsText} ref={textRef}>
             <h2>Our core values are</h2>
-            <p>
+            <p style={{ lineHeight: '1.8' }}>
               At <span className={styles.boldText}>Falcon Engineering</span>, we bring together a diverse team of professionals passionate about pushing the boundaries of architectural and engineering design. With years of experience in the AEC industry, we pride ourselves on delivering bespoke services tailored to meet the unique needs of every client. Our commitment to excellence and innovation ensures that each project is handled with the utmost precision and care.
             </p>
+
           </div>
         </div>
       </div>

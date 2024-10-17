@@ -59,7 +59,7 @@
   .aboutUsText p {
     margin: 0; /* Remove margin for paragraph */
     padding: 0; /* Optional: Add padding for better text flow */
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 100;
     text-align: justify;
   }
@@ -163,7 +163,7 @@
     .aboutUsContainer {
       display: flex;
       justify-content: center;
-      padding: 30px 40px 10px; /* Adjust padding as needed */
+      padding: 30px 20px 10px; /* Adjust padding as needed */
       margin-top: -230px;
     }
     
@@ -197,8 +197,10 @@
     .seTeamContainer {
       grid-template-columns: repeat(1, 1fr); /* 2 members per row on mobile */
       gap: 30px; /* Adjust space between members for mobile */
-      padding: 10px 20px 10px 10px; /* Adjust padding as needed */
-
+      padding: 10px 20px 10px 20px;
+      text-align: center; /* Adjust space between members for mobile */
+      justify-items: center; /* Center the items */
+      justify-content: center; /* This centers the last row if it has fewer items */
     }
   
     .seTeamMember {
@@ -210,6 +212,14 @@
     .seTeamImage {
       width: 40px; /* Adjust image size for mobile */
       height: 40px; /* Adjust image size for mobile */
+      text-align: center;
+    }
+    h3{
+      text-align: center;
+    }
+    P{
+      text-align: center;
+
     }
   }
   

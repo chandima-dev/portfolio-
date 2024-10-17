@@ -72,7 +72,7 @@ const Services = () => {
                     {section.descriptionPoints.map((point, i) => {
                       const [title, description] = point.split(': '); 
                       return (
-                        <li key={i}>
+                        <li key={i} style={{ marginBottom: '12px' }}>
                           <strong>{title}:</strong> {description}
                         </li>
                       );
@@ -102,7 +102,7 @@ const Services = () => {
                     {section.descriptionPoints.map((point, i) => {
                       const [title, description] = point.split(': '); 
                       return (
-                        <li key={i}>
+                        <li key={i} style={{ marginBottom: '12px' }}>
                           <strong>{title}:</strong> {description}
                         </li>
                       );

@@ -1,8 +1,12 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Cerebri+Sans:wght@400;700&display=swap');
+
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  font-family: 'Cerebri Sans', sans-serif; /* Set the font family here */
 }
 
 .App {

@@ -26,7 +26,7 @@
 
 .largeImage {
   grid-column: span 2; /* Span two columns */
-  height: 300px; /* Adjust height as needed */
+  height: 400px; /* Adjust height as needed */
   width: 100%;
 }
 
@@ -48,6 +48,7 @@
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center items vertically */
   padding: 20px; /* Optional: Add padding for spacing */
+  font-size: 18px;
 }
 
 .serviceText h2 {
