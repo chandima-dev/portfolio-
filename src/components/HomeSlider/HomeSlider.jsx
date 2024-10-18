@@ -1,67 +1,75 @@
-import { useState, useEffect } from "react";
-// import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { sliderData } from "../../slider-data.jsx";
-import "./HomeSlider.css";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './HomeSlider.css';
 
-const HomeSlider = () => {
+const Slideshow = () => {
+  const slides = [
+    {
+      id: 1,
+      image: '/images/img1.jpeg',
+      title: 'Title 1',
+      description: 'This is the description for image 1',
+      buttonLabel: 'Click Here 1',
+      buttonLink: '/aboutus',
+    },
+    {
+      id: 2,
+      image: '/images/img2.jpeg',
+      title: 'Title 2',
+      description: 'This is the description for image 2',
+      buttonLabel: 'Click Here 2',
+      buttonLink: '/projects',
+    },
+    {
+      id: 3,
+      image: '/images/img3.jpeg',
+      title: 'Title 3',
+      description: 'This is the description for image 3',
+      buttonLabel: 'Click Here 3',
+      buttonLink: '/contactus',
+    },
+  ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideLength = sliderData.length;
-
-  const autoScroll = true;
-  let slideInterval;
-  let intervalTime = 6000;
-
-  const nextSlide = () => {
-    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-    console.log("next");
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
-    console.log("prev");
-  };
-
-  function auto() {
-    slideInterval = setInterval(nextSlide, intervalTime);
-  }
+  const [isSlidingOut, setIsSlidingOut] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setCurrentSlide(0);
-  }, []);
+    const interval = setInterval(() => {
+      setIsSlidingOut(true); // Start slide-out animation
+      setTimeout(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        setIsSlidingOut(false); // Reset sliding out after changing slide
+      }, 900); // Wait for animation to finish before changing slide
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
-  useEffect(() => {
-    if (autoScroll) {
-      auto();
-    }
-    return () => clearInterval(slideInterval);
-  }, [currentSlide]);
+  const handleButtonClick = () => {
+    const link = slides[currentSlide].buttonLink;
+    console.log(slides[currentSlide].id);
+    navigate(link);
+  };
 
   return (
-    <div className="slider">
-      {/* <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide} />
-      <AiOutlineArrowRight className="arrow next" onClick={nextSlide} /> */}
-      {sliderData.map((slide, index) => {
-        return (
-          <div
-            className={index === currentSlide ? "slide current" : "slide"}
-            key={index}
-          >
-            {index === currentSlide && (
-              <div>
-                <img src={slide.image} alt="slide" className="image" />
-                <div className="content">
-                  <h2>{slide.heading}</h2>
-                  <p>{slide.desc}</p>
-                  <hr />
-                  <button className="--btn --btn-primary">Get Started</button>
-                </div>
-              </div>
-            )}
+    <div className="slideshow-container">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`slide ${index === currentSlide ? 'active' : ''}`}
+        >
+          <img src={slide.image} alt={`Slide ${index + 1}`} className="slide-image" />
+          <div className={`slide-content ${index === currentSlide ? 'slide-in' : ''} ${isSlidingOut && index === currentSlide ? 'slide-out' : ''}`}>
+            <h2 className="slide-title">{slide.title}</h2>
+            <p className="slide-description">{slide.description}</p>
+            <button onClick={handleButtonClick} className="slide-button">
+              {slide.buttonLabel}
+            </button>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 };
 
-export default HomeSlider;
+export default Slideshow;

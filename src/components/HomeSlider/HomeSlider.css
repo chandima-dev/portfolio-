@@ -1,217 +1,117 @@
-/* HomeSlider.css */
-
-/* Base Slider Styles */
-.slider {
-  width: 100%;
-  height: 75vh;
+.slideshow-container {
   position: relative;
+  width: 100%;
+  height: 600px;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
   overflow: hidden;
 }
 
-/* Slide Styles */
 .slide {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* Initially hidden */
-  transform: translateZ(-10px);
-  transition: all 4s ease;
-}
-
-/* Current Slide Visible */
-.slide.current {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-/* Image Styling */
-.slide img.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the container without distortion */
-}
-
-/* Content Styling */
-.content {
-  position: absolute;
-  top: 23rem;
-  left: 5rem;
   opacity: 0;
-  width: 50%;
-  color: #fff;
-  padding: 3rem;
-  background: rgba(0, 0, 0, 0.3);
-  animation: slide-up 1s ease 0.5s;
-  animation-fill-mode: forwards;
-  visibility: hidden;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.4s ease-in-out;
 }
 
-.slide.current .content {
+.slide.active {
   opacity: 1;
-  visibility: visible;
-  transform: translateY(-6rem); /* Moves content up as per animation */
 }
 
-/* Slide-Up Animation */
-@keyframes slide-up {
-  0% {
-    visibility: visible;
-    top: 23rem;
-  }
-  100% {
-    visibility: visible;
-    top: 17rem;
-  }
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
 }
 
-/* Navigation Arrows */
-.arrow {
-  border: 2px solid white;
-  background-color: transparent;
-  color: #fff;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
+.slide-content {
   position: absolute;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  bottom: -100%; /* Start off-screen */
+  left: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  transition: bottom 0.9s ease-in-out; /* Animate the bottom property */
+  padding: 20px 200px;
+  z-index: 10; /* Ensure it appears above the image */
 }
 
-.arrow:hover {
-  background-color: #fff;
-  color: #777;
+.slide-content.slide-in {
+  bottom: 50%; /* Move to the vertical middle */
+  transform: translateY(50%); /* Adjust for the height of the content */
 }
 
-.next {
-  top: 35%;
-  right: 1.5rem;
+.slide-title {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.prev {
-  top: 35%;
-  left: 1.5rem;
+.slide-description {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-/* Horizontal Rule within Content */
-.content hr {
-  height: 2px;
-  background: white;
-  width: 50%;
-  margin: 1rem 0;
-}
-
-/* Button Styling (Assuming --btn and --btn-primary are defined elsewhere) */
-.--btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
-}
-
-.--btn-primary {
+.slide-button {
+  padding: 10px 20px;
   background-color: #007bff;
-  color: #fff;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer; /* Change cursor to pointer */
 }
 
-/* Media Queries for Responsiveness */
-
-/* Mobile Responsive Styles for 768px and Below */
-@media screen and (max-width: 768px) {
-
-  /* Slider takes full viewport height */
-  .slider {
-    height: 100vh; /* Full viewport height */
+.slide-button:hover {
+  background-color: #0056b3;
+}
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 300px; /* Adjust height for mobile */
   }
 
-  /* Remove 3D Transform and ensure full height */
+  .slide-content {
+    bottom: -100%; /* Start off-screen for animation */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 20px; /* Adjust padding */
+    z-index: 20; /* Ensure it appears above the image */
+    transition: bottom 0.9s ease-in-out; /* Animate the bottom property */
+  }
+
+  .slide-content.slide-in {
+    bottom: 50%; /* Move to the vertical middle */
+    transform: translate(-50%, 50%); /* Center horizontally and adjust for height */
+  }
+
+  .slide-content.slide-out {
+    bottom: -100%; /* Move out of view */
+    transition: bottom 0.5s ease-in-out; /* Animate the bottom property */
+  }
+
+  .slide-title {
+    font-size: 24px; /* Adjust title size for mobile */
+  }
+
+  .slide-description {
+    font-size: 14px; /* Adjust description size for mobile */
+  }
+
+  .slide-button {
+    font-size: 14px; /* Adjust button size for mobile */
+  }
+
+  .slide-image {
+    object-fit: cover; /* Ensure image covers the slide */
+  }
+
   .slide {
-    transform: translateZ(0); /* Remove 3D transform for simplicity */
-    height: 100%; /* Ensure slides fill the slider's height */
-  }
-
-  /* Image covers entire slide area without distortion */
-  .slide img.image {
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-  }
-
-  /* Adjust Content Box Positioning and Size */
-  .content {
-    top: 15rem; /* Adjust vertical positioning */
-    left: 2rem; /* Reduce horizontal positioning */
-    width: 90%; /* Increase width for better readability */
-    padding: 2rem; /* Reduce padding to save space */
-    font-size: 1rem; /* Adjust font size for readability */
-    background: rgba(0, 0, 0, 0.5); /* Slightly darker background for better contrast */
-    transform: translateY(0); /* Reset transform */
-    opacity: 0; /* Reset opacity */
-    visibility: hidden; /* Hide by default */
-  }
-
-  /* Ensure Content is Visible in Current Slide */
-  .slide.current .content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-6rem); /* Moves content up as per animation */
-  }
-  image{
-    height: 1003vh;
-  }
-  /* Navigation Arrows Resizing and Repositioning */
-  .arrow {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-width: 1px;
-    font-size: 0.8rem;
-  }
-
-  .next {
-    right: 0.5rem; /* Move closer to the edge */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for perfect centering */
-  }
-
-  .prev {
-    left: 0.5rem; /* Move closer to the edge */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for perfect centering */
-  }
-
-  /* Horizontal Rule Adjustment */
-  .content hr {
-    width: 100%; /* Make HR span full width */
-    margin: 1rem 0; /* Add vertical spacing */
-  }
-
-  /* Animation Timing Adjustment */
-  .content {
-    animation: slide-up 1s ease 0.3s; /* Slightly faster animation */
-  }
-
-  /* Further Adjustments for Even Smaller Devices (600px and Below) */
-  @media screen and (max-width: 600px) {
-    .content {
-      top: 12rem; /* Further adjust vertical positioning */
-      left: 1rem; /* Further reduce horizontal positioning */
-      width: 95%; /* Maximize content width */
-      padding: 1.5rem; /* Further reduce padding */
-      font-size: 0.9rem; /* Slightly smaller font size */
-    }
-
-    .arrow {
-      width: 1.2rem;
-      height: 1.2rem;
-      font-size: 0.7rem;
-    }
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
   }
 }
-
-
