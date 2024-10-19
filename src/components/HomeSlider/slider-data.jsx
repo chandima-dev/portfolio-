@@ -1,20 +1,28 @@
-export const sliderData = [
+const slidesData = [
   {
-    image: "/images/img1.jpeg",
-    heading: "Slide One",
-    desc: "This is the description of slide one Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.",
-    redirectUrl: "./aboutus", // Add the URL for redirection
+    id: 1,
+    image: '/images/img1.jpeg',
+    title: 'Explore Our Services',
+    description: 'We specialize in delivering tailored solutions for the Architecture, Engineering, and Construction industry.',
+    buttonLabel: 'Discover More',
+    buttonLink: '/aboutus',
   },
   {
-    image: "/images/img2.jpeg",
-    heading: "Slide Two",
-    desc: "This is the description of slide two Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.",
-    redirectUrl: "./projects", // Add the URL for redirection
+    id: 2,
+    image: '/images/img2.jpeg',
+    title: 'Our Projects',
+    description: 'Explore our portfolio of valuable and impactful projects',
+    buttonLabel: 'Explore Projects',
+    buttonLink: '/projects',
   },
   {
-    image: "/images/img3.jpeg",
-    heading: "Slide Three",
-    desc: "This is the description of slide three Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.",
-    redirectUrl: "/contactus", // Add the URL for redirection
+    id: 3,
+    image: '/images/img3.jpeg',
+    title: 'Connect with Us',
+    description: 'We’re Here for Consultations, Collaborations, and Your Inquiries',
+    buttonLabel: 'Get Started',
+    buttonLink: '/contactus',
   },
 ];
+
+export default slidesData;

@@ -25,6 +25,7 @@
   object-fit: cover;
   margin: 0; /* Remove margin */
   padding: 0; /* Remove padding */
+  filter: brightness(0.6);
 }
 
 .slide-content {
@@ -44,28 +45,35 @@
 }
 
 .slide-title {
-  font-size: 36px;
+  font-size: 80px;
   margin-bottom: 10px;
 }
 
 .slide-description {
-  font-size: 18px;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
 .slide-button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 15px 30px; /* Increase padding to make the button larger */
+  background-color: #FF7F00;
   color: white;
   text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer; /* Change cursor to pointer */
+  font-size: 20px; /* Increase font size */
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  cursor: pointer;
+  border: none; /* Remove any default border */
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
 }
 
 .slide-button:hover {
-  background-color: #0056b3;
+  background-color: transparent; /* Make background transparent on hover */
+  color: #FF7F00; /* Change text color to match the button's original background */
+  border: 3px solid #FF7F00; /* Add a border when transparent */
+  opacity: 0.8; /* Add a slight opacity effect */
+  font-weight: bold; /* Add
 }
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .slideshow-container {
@@ -76,9 +84,12 @@
     bottom: -100%; /* Start off-screen for animation */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
-    padding: 20px; /* Adjust padding */
+    padding: 0px; /* Adjust padding */
     z-index: 20; /* Ensure it appears above the image */
     transition: bottom 0.9s ease-in-out; /* Animate the bottom property */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    width: 100%; /* Ensure slide content takes full width */
   }
 
   .slide-content.slide-in {
@@ -92,15 +103,35 @@
   }
 
   .slide-title {
-    font-size: 24px; /* Adjust title size for mobile */
+    font-size: 35px; /* Adjust title size for mobile */
+    width: 100%; /* Make title full width */
+    margin: 0; /* Remove default margin */
+    padding: 0 10px; /* Optional: Add some horizontal padding */
   }
 
   .slide-description {
-    font-size: 14px; /* Adjust description size for mobile */
+    font-size: 18px; /* Adjust description size for mobile */
+    width: 100%; /* Make description full width */
+    margin: 0; /* Remove default margin */
+    padding: 10px 10px 10px 0;
   }
 
   .slide-button {
-    font-size: 14px; /* Adjust button size for mobile */
+    padding: 12px 20px; /* Decrease padding for smaller screens */
+    font-size: 18px; /* Reduce font size for smaller screens */
+    border-radius: 6px; /* Adjust border radius if needed */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    cursor: pointer;
+    border: none; /* Remove any default border */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+  .slide-button:hover {
+    background-color: transparent; /* Make background transparent on hover */
+    color: #FF7F00; /* Change text color to match the button's original background */
+    border: 2px solid #FF7F00; /* Add a border when transparent */
+    opacity: 0.8; /* Add a slight opacity effect */
   }
 
   .slide-image {
