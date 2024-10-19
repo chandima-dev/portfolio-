@@ -62,7 +62,8 @@
   font-size: 20px; /* Increase font size */
   border-radius: 8px; /* Increase border radius for a more rounded look */
   cursor: pointer;
-  border: none; /* Remove any default border */
+  font-weight: bold;
+  border: 3px solid transparent;
   transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
 }
 
@@ -72,6 +73,7 @@
   border: 3px solid #FF7F00; /* Add a border when transparent */
   opacity: 0.8; /* Add a slight opacity effect */
   font-weight: bold;
+
 }
 
 /* Media query for mobile devices */

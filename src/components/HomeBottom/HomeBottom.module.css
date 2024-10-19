@@ -58,11 +58,18 @@
     border-radius: 8px; /* Increase border radius for a more rounded look */
     cursor: pointer;
     font-weight: bold; 
-    border: 3px solid transparent; /* Set an initial transparent border to prevent content shift on hover */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
+    border: 2px solid transparent; /* Set an initial transparent border to prevent content shift on hover */
     opacity: 0; /* Start hidden for animation */
     transform: translateX(100%); /* Start from the right */
     transition: opacity 2.7s ease, transform 2.7s ease; /* Shortened duration for faster animation */
+}
+
+/* Separate hover effect for button */
+.button:hover {
+    background-color: transparent; /* Make background transparent on hover */
+    color: #FF7F00; /* Change text color to match the button's original background */
+    border: 2px solid #FF7F00; /* Add a border when transparent */
+    opacity: 0.8; /* Add a slight opacity effect */
 }
 
 /* Animation class to trigger the slide-in effect */
@@ -96,21 +103,6 @@
     .button {
         padding: 5px; 
         width: 40%; /* Make button full width */
-        background-color: #FF7F00;
-        color: white;
-        text-decoration: none;
-        font-size: 18px; /* Increase font size */
-        border-radius: 8px; /* Increase border radius for a more rounded look */
-        cursor: pointer;
-        font-weight: bold; 
-        border: 3px solid transparent; /* Set an initial transparent border to prevent content shift on hover */
-        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
-        transform: translateX(100%); /* Start from the right */
         transition: opacity 2.2s ease, transform 2.2s ease; /* Shortened duration for faster animation */
     }
-    /* Animation class to trigger the slide-in effect */
-.slideIn {
-    opacity: 1; /* Fade in */
-    transform: translateX(0); /* Move to original position */
-}
 }
