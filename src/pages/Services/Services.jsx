@@ -9,6 +9,9 @@ const Services = () => {
   const textRefs = useRef([useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)]);
 
   useEffect(() => {
+    // Scroll to top on component mount
+    window.scrollTo(0, 0);
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };

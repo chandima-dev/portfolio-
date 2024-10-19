@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import SubSlider from '../../components/SubSlider/SubSlider';
 import { Container, Grid } from '@mui/material';
@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Fade } from 'react-awesome-reveal'; // Import the animation component
-import cardData from './ProjectData'; // Import the card data from data.js
+import cardData from './ProjectData'; // Import the card data
 
 const MultiActionAreaCard = ({ image, title, delay, index }) => {
   const navigate = useNavigate(); // Hook for navigation
@@ -53,6 +53,10 @@ const MultiActionAreaCard = ({ image, title, delay, index }) => {
 };
 
 const Projects = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+  }, []); // Empty dependency array ensures this runs only once
+
   return (
     <div>
       {/* SubSlider component */}
