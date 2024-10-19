@@ -1,7 +1,7 @@
 const slidesData = [
   {
     id: 1,
-    image: '/images/img1.jpeg',
+    image: '/public/images/homeImages/img1.jpeg',
     title: 'Explore Our Services',
     description: 'We specialize in delivering tailored solutions for the Architecture, Engineering, and Construction industry.',
     buttonLabel: 'Discover More',
@@ -9,7 +9,7 @@ const slidesData = [
   },
   {
     id: 2,
-    image: '/images/img2.jpeg',
+    image: '/images/homeImages/img2.jpeg',
     title: 'Our Projects',
     description: 'Explore our portfolio of valuable and impactful projects',
     buttonLabel: 'Explore Projects',
@@ -17,7 +17,7 @@ const slidesData = [
   },
   {
     id: 3,
-    image: '/images/img3.jpeg',
+    image: '/images/homeImages/img3.jpeg',
     title: 'Connect with Us',
     description: 'We’re Here for Consultations, Collaborations, and Your Inquiries',
     buttonLabel: 'Get Started',

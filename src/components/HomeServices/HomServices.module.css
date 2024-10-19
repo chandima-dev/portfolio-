@@ -1,0 +1,100 @@
+/* Outer container for the full background */
+.outerContainer {
+    background-color: black; /* Full black background */
+    height: auto; /* Change height to auto to accommodate dynamic content */
+    min-height: 75vh; /* Ensure it still has a minimum height */
+    display: flex; /* Use flexbox to center the inner container */
+    justify-content: center; /* Center the inner container horizontally */
+    align-items: center; /* Center the inner container vertically */
+    flex-direction: column; /* Stack the inner container vertically */
+}
+
+
+/* Inner container for card view */
+.cardContainer {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space cards evenly */
+    max-width: 1400px; /* Set maximum width to 1400px */
+    width: 100%; /* Make sure it takes full width */
+    box-sizing: border-box; /* Include padding in width */
+    gap: 0; /* Remove gap between cards */
+}
+
+/* Style for each card */
+.card {
+    background-color: rgb(43, 41, 41); /* Grey background for cards */
+    color: white; /* White text color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Adjusted padding to reduce height */
+    text-align: center; /* Center-align text */
+    width: 250px; /* Set a width for each card */
+    height: 400px; /* Set fixed height for each card */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items at the start */
+    transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for border, shadow, and transform */
+    border: 2px solid transparent; /* Transparent border to maintain layout */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Hover effect for card */
+.card:hover {
+    border-color: #FF7F00; /* Change border color to orange on hover */
+    box-shadow: 0 0 10px #FF7F00; /* Optional: Add shadow effect on hover */
+    transform: translateY(-8px); /* Move the card up by 2 pixels */
+}
+
+/* Style for the card title */
+.cardTitle {
+    color: #FF7F00; /* Orange title color */
+    margin: 35px 0; /* Margin around title */
+    font-size: 30px;
+}
+
+/* Style for the card icon */
+.cardIcon {
+    width: 50px; /* Set a fixed size for icons */
+    height: 50px; /* Set a fixed size for icons */
+    margin: 0 auto; /* Center the icon horizontally */
+    display: block; /* Make the icon a block element */
+    margin-top: 40px;
+}
+
+/* Style for the card description */
+.cardDescription {
+    margin-top: auto; /* Push description to the bottom of the card */
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards in the container */
+        padding: 20px; /* Add some padding around the container */
+        gap: 20px; /* Add some gap between cards */
+        flex-wrap: wrap; /* Allow cards to wrap to the next line */
+        justify-content: center; /* Center cards in the container */
+
+    }
+    
+    .card {
+        width: 90%; /* Make cards full-width on mobile */
+        height: auto; /* Allow height to adjust based on content */
+        height: 400px; /* Set fixed height for each card */
+        justify-content: flex-start; /* Align items at the start */
+        transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for border, shadow, and transform */
+        border: 2px solid transparent; /* Transparent border to maintain layout */
+        margin: 0; /* Remove any default margin */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px; /* Adjusted padding to reduce height */
+    }
+    /* Hover effect for card */
+    .card:hover {
+        border-color: #FF7F00; /* Change border color to orange on hover */
+        box-shadow: 0 0 10px #FF7F00; /* Optional: Add shadow effect on hover */
+        transform: translateY(-8px); /* Move the card up by 2 pixels */
+    }
+
+}
+
