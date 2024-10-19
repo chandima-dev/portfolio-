@@ -22,7 +22,7 @@ const App = () => {
             <>
               <HomeSlider /> 
               <Home />
-              <HomeProjects />
+              {/* <HomeProjects /> */}
             </>
           } />
           <Route path="/contactus" element={
