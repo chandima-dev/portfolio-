@@ -1,7 +1,7 @@
 const slidesData = [
   {
     id: 1,
-    image: '/public/images/homeImages/img1.jpeg',
+    image: '/images/homeImages/img1.jpeg',
     title: 'Explore Our Services',
     description: 'We specialize in delivering tailored solutions for the Architecture, Engineering, and Construction industry.',
     buttonLabel: 'Discover More',
