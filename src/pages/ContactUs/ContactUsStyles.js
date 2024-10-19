@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
   ${'' /* padding: 10px; */}
   ${'' /* margin-top: -10px; */}
   position: relative;
-  z-index: 10; // Ensure it stays above the slideshow
+  z-index: 1; // Ensure it stays above the slideshow
 
 
   @media (max-width: 768px) {
@@ -17,7 +17,7 @@ export const StyledContainer = styled.div`
     margin-top: -260px;
     padding: 10px;
     position: relative;
-    z-index: 10;
+    z-index: 1;
   }
 `;
 

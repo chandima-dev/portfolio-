@@ -6,9 +6,9 @@ const SubSlider = ({ title, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
-    "/images/img1.jpeg",
-    "/images/img2.jpeg",
-    "/images/img3.jpeg"
+    "/images/homeImages/img1.jpeg",
+    "/images/homeImages/img2.jpeg",
+    "/images/homeImages/img3.jpeg"
   ];
 
   useEffect(() => {

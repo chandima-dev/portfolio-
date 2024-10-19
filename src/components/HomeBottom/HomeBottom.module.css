@@ -1,0 +1,116 @@
+.outerContainer {
+    height: 50vh; /* Full viewport height to ensure vertical centering */
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    flex-direction: column; /* Stack the inner container vertically */
+    position: relative;
+    overflow: hidden; /* Ensure content stays within the container */
+}
+
+.outerContainer::before {
+    content: '';
+    position: absolute; /* Positioned absolutely to cover the entire container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/public/images/homeImages/img1.jpeg'); /* Set background image */
+    background-size: cover; /* Ensure the background image covers the whole container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    filter: brightness(0.5); /* Apply brightness filter only to the background image */
+    z-index: -1; /* Ensure the image stays behind the content */
+}
+  
+.content {
+    width: 1400px;
+    color: white;
+    text-align: left; /* Align text to the left */
+    z-index: 1; /* Ensure content is above the background image */
+    border-radius: 10px;
+}
+  
+.title {
+    font-size: 60px; /* Increased font size for title */
+    margin-bottom: 10px;
+    text-align: left; 
+    align-items: left;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateX(100%); /* Start from the right */
+    transition: opacity 2.0s ease, transform 2.0s ease; /* Shortened duration for faster animation */
+}
+
+.description {
+    font-size: 26px; /* Increased font size for description */
+    margin-bottom: 20px;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateX(100%); /* Start from the right */
+    transition: opacity 2.0s ease, transform 2.0s ease; /* Shortened duration for faster animation */
+}
+
+.button {
+    padding: 15px 30px; /* Increase padding to make the button larger */
+    background-color: #FF7F00;
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Increase font size */
+    border-radius: 8px; /* Increase border radius for a more rounded look */
+    cursor: pointer;
+    font-weight: bold; 
+    border: 3px solid transparent; /* Set an initial transparent border to prevent content shift on hover */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateX(100%); /* Start from the right */
+    transition: opacity 2.7s ease, transform 2.7s ease; /* Shortened duration for faster animation */
+}
+
+/* Animation class to trigger the slide-in effect */
+.slideIn {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Move to original position */
+}
+
+/* Mobile responsiveness for screens 768px and below */
+@media (max-width: 768px) {
+    .outerContainer {
+        height: 350px; /* Full height for mobile */
+        padding: 0 10px; /* Add padding on the sides */
+    }
+
+    .content {
+        width: 100%; /* Full width for mobile */
+        text-align: left; /* Align text to the left */
+        padding: 20px; /* Add padding for mobile */
+    }
+
+    .title {
+        font-size: 26px; /* Smaller font size for mobile */
+    }
+
+    .description {
+        font-size: 18px; /* Smaller font size for mobile */
+        text-align: left;
+    }
+
+    .button {
+        padding: 5px; 
+        width: 40%; /* Make button full width */
+        background-color: #FF7F00;
+        color: white;
+        text-decoration: none;
+        font-size: 18px; /* Increase font size */
+        border-radius: 8px; /* Increase border radius for a more rounded look */
+        cursor: pointer;
+        font-weight: bold; 
+        border: 3px solid transparent; /* Set an initial transparent border to prevent content shift on hover */
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
+        transform: translateX(100%); /* Start from the right */
+        transition: opacity 2.2s ease, transform 2.2s ease; /* Shortened duration for faster animation */
+    }
+    /* Animation class to trigger the slide-in effect */
+.slideIn {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Move to original position */
+}
+}

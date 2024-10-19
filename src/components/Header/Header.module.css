@@ -143,18 +143,17 @@
     /* margin-bottom: -2%;
     margin-top: 5%; */
   }
-
   .navbar {
     position: absolute; /* Position navbar absolutely */
     top: 100px; /* Adjust as necessary to position it below the header */
     left: 0;
     right: 0;
-    background-color: #181419; /* Match the header's background */
-    z-index: 9; /* Set a lower z-index than the header */
+    background-color: #ffffff; /* Match the header's background */
+    z-index: 100; /* Set a high z-index to be on top of other content */
     max-height: 0; /* Initially hide it */
     overflow: hidden; /* Prevent overflow */
     transition: max-height 0.3s ease; /* Smooth transition */
-    background-color: #ffffff;
+    z-index: 2000000;
   }
   .navbar.navOpen {
     max-height: 300px; /* Adjust this for the height of your dropdown */

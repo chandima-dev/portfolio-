@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from './Home.module.css'; // Import as a module
 import HomeProjects from '../../components/HomeProjects/HomeProjects';
 import HomServices from '../../components/HomeServices/HomServices';
+import HomeBottom from '../../components/HomeBottom/HomeBottom';
 
 const Slideshow = () => {
 
@@ -13,6 +14,7 @@ const Slideshow = () => {
       <p>testing</p> {/* This is just a placeholder. You can replace it with the actual slider component */}
       <HomServices />
       <HomeProjects  />
+      <HomeBottom  />
 
     </div>
   );

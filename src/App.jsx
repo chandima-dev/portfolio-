@@ -11,6 +11,7 @@ import AboutUs from './pages/About/About';
 import HomeSlider from './components/HomeSlider/HomeSlider'; 
 import HomeProjects from './components/HomeProjects/HomeProjects'; 
 import HomServices from './components/HomeServices/HomServices'; 
+import HomeBottom from './components/HomeBottom/HomeBottom'; 
 
 const App = () => {
   return (
