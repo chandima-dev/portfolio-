@@ -11,7 +11,7 @@ const Slideshow = () => {
 
   return (
     <div className={styles.slideshow}>
-      <p>testing</p> {/* This is just a placeholder. You can replace it with the actual slider component */}
+      {/* <p>testing</p> This is just a placeholder. You can replace it with the actual slider component */}
       <HomServices />
       <HomeProjects  />
       <HomeBottom  />
