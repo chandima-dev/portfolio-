@@ -9,6 +9,7 @@ import SingleProject from './pages/SingleProject/SingleProject';
 import Services from './pages/Services/Services'; 
 import AboutUs from './pages/About/About'; 
 import HomeSlider from './components/HomeSlider/HomeSlider'; 
+import HomeProjects from './components/HomeProjects/HomeProjects'; 
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <>
               <HomeSlider /> 
               <Home />
+              <HomeProjects />
             </>
           } />
           <Route path="/contactus" element={
