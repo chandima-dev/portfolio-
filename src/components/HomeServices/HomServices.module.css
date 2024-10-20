@@ -2,7 +2,7 @@
 .outerContainer {
     background-color: black; /* Full black background */
     height: auto; /* Change height to auto to accommodate dynamic content */
-    min-height: 75vh; /* Ensure it still has a minimum height */
+    min-height:85vh; /* Ensure it still has a minimum height */
     display: flex; /* Use flexbox to center the inner container */
     justify-content: center; /* Center the inner container horizontally */
     align-items: center; /* Center the inner container vertically */
@@ -59,7 +59,13 @@
     display: block; /* Make the icon a block element */
     margin-top: 40px;
 }
-
+.mainTitle {
+    color: #ffffff; /* Change this to your desired color */
+    font-size: 50px; /* Set the font size */
+    margin-bottom: 40px; /* Add some space below the title */
+    text-align: center; /* Center the title */
+    margin-top: -100px;
+}
 /* Style for the card description */
 .cardDescription {
     margin-top: auto; /* Push description to the bottom of the card */

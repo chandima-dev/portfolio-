@@ -12,6 +12,7 @@ const CardComponent = () => {
 
     return (
         <div className={styles.outerContainer}>
+            <h1 className={styles.mainTitle}>Our Services</h1>
             <div className={styles.cardContainer}>
                 {cardsData.map((card, index) => (
                     <div className={styles.card} key={index} onClick={handleCardClick}>

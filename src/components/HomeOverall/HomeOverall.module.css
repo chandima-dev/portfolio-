@@ -1,0 +1,199 @@
+/* Full-width black container */
+.fullWidthContainer {
+    width: 100%;
+    height: 75vh; /* Full viewport height */
+    background-color: rgb(43, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Max-width container */
+  .maxWidthContainer {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Left container taking 3/5 of the max-width */
+  .leftContainer {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 50px 50px 50px 0;
+    opacity: 0; /* Start with hidden */
+    animation: slideInLeft 1s forwards; /* Animation for leftContainer */
+  }
+  
+  /* Keyframe animation for sliding in from the left */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%); /* Start off-screen to the left */
+      opacity: 0; /* Fully transparent */
+    }
+    100% {
+      transform: translateX(0); /* Move to its original position */
+      opacity: 1; /* Fully opaque */
+    }
+  }
+  
+  /* Vertically centered text */
+  .centeredText {
+    text-align: left;
+  }
+  
+  /* Style for the "Welcome to" text */
+  .welcomeText {
+    font-size: 30px;
+    display: block; /* Ensures "Welcome to" is on its own line */
+    margin-bottom: -30px;
+  }
+  
+  /* Style for the company name */
+  .companyNameText {
+    font-size: 58px;
+    display: block;
+    color: #FF7F00;
+  }
+  
+  /* Paragraph text styling */
+  .paragraphText {
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.5; /* Adjust this value to control line spacing */
+  }
+  
+  /* Right container taking 2/5 of the max-width */
+  .rightContainer {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container for the images */
+  .imageContainer {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px; /* Adds space between the images */
+    padding: 50px 0 50px 50px;
+    z-index: 1;
+  }
+  
+  /* Wrapper for each image */
+  .imageWrapper {
+    width: 100%; /* Ensure each image takes the full width */
+    opacity: 0; /* Start with hidden */
+    animation: fadeInLeft 0.5s forwards; /* Animation for images */
+    animation-delay: var(--delay); /* Use a CSS variable for delay */
+  }
+  
+  /* Keyframe animation for fading in from the left */
+  @keyframes fadeInLeft {
+    0% {
+      transform: translateX(-100%); /* Start off-screen to the left */
+      opacity: 0; /* Fully transparent */
+    }
+    100% {
+      transform: translateX(0); /* Move to its original position */
+      opacity: 1; /* Fully opaque */
+    }
+  }
+  
+  /* Image styling */
+  .imageStyle {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    /* Full-width black container */
+    .fullWidthContainer {
+      height: auto; /* Allow the container to fit the content */
+      padding: 0; /* Remove any padding */
+      margin: 0; /* Remove any margin */
+      background-color: rgb(43, 41, 41); /* Ensure background color covers full width */
+    }
+  
+    /* Max-width container */
+    .maxWidthContainer {
+      flex-direction: column; /* Stack containers vertically */
+      align-items: center; /* Center align */
+      width: 100%; /* Full width */
+      padding: 20px; /* Remove padding */
+    }
+  
+    /* Left container takes full width */
+    .leftContainer {
+      flex: none; /* Remove flex sizing */
+      width: 100%; /* Full width */
+      padding: 20px; /* Adjust padding for mobile */
+      animation: slideInLeft 1s forwards; /* Animation for leftContainer */
+    }
+  
+    /* Right container takes full width */
+    .rightContainer {
+      flex: none; /* Remove flex sizing */
+      width: 100%; /* Full width */
+      display: flex;
+      flex-direction: column; /* Stack images vertically */
+      align-items: center; /* Center align images */
+    }
+  
+    /* Container for the images */
+    .imageContainer {
+      display: flex;
+      flex-direction: column; /* Stack images vertically */
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 10px; /* Space between images */
+      padding: 20px 0; /* Adjust padding for mobile */
+      z-index: 1;
+    }
+  
+    /* Wrapper for each image */
+    .imageWrapper {
+      width: 100%; /* Ensure each image takes the full width */
+      opacity: 0; /* Start with hidden */
+      animation: fadeInDown 0.5s forwards; /* Animation for images */
+      animation-delay: var(--delay); /* Use a CSS variable for delay */
+    }
+  
+    /* Keyframe animation for fading in from the top */
+    @keyframes fadeInDown {
+      0% {
+        transform: translateY(-20px); /* Start slightly above */
+        opacity: 0; /* Fully transparent */
+      }
+      100% {
+        transform: translateY(0); /* Move to its original position */
+        opacity: 1; /* Fully opaque */
+      }
+    }
+  
+    /* Paragraph text styling */
+    .paragraphText {
+      text-align: justify; /* Ensure the paragraph is justified */
+      font-size: 18px; /* Adjust font size for mobile */
+    }
+  
+    /* Style for the "Welcome to" text */
+    .welcomeText {
+      margin-top: -20px;
+      font-size: 20px; /* Adjust font size for mobile */
+    }
+  
+    /* Style for the company name */
+    .companyNameText {
+      font-size: 32px; /* Adjust font size for mobile */
+    }
+  }
+  
