@@ -36,11 +36,12 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   transition: bottom 0.9s ease-in-out; /* Animate the bottom property */
   padding: 20px 200px;
+  margin-top: -10px;
   z-index: 10; /* Ensure it appears above the image */
 }
 
 .slide-content.slide-in {
-  bottom: 50%; /* Move to the vertical middle */
+  bottom: 58%; /* Move to the vertical middle */
   transform: translateY(50%); /* Adjust for the height of the content */
 }
 

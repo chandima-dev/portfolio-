@@ -15,7 +15,7 @@ const Slideshow = () => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slidesData.length);
         setIsSlidingOut(false); // Reset sliding out after changing slide
       }, 900); // Wait for animation to finish before changing slide
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 

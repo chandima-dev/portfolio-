@@ -15,7 +15,7 @@
   margin-bottom: 200px;
   width: 100%; /* Adjust the width of the pseudo-element */
   height: 100%; /* Adjust the height of the pseudo-element */
-  background-image: url('/public/images/homeImages/Untitled\ design.svg'); /* Set background image */
+  background-image: url('/images/homeImages/Untitled\ design.svg'); /* Set background image */
   background-size:2500px 1750px; /* Set the specific size for the background image */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -115,7 +115,7 @@
     margin-bottom: 200px;
     width: 100%; /* Adjust the width of the pseudo-element */
     height: 100%; /* Adjust the height of the pseudo-element */
-    background-image: url('/public/images/homeImages/Untitled\ design.svg'); /* Set background image */
+    background-image: url('/images/homeImages/Untitled\ design.svg'); /* Set background image */
     background-size:700px 750px; /* Set the specific size for the background image */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */

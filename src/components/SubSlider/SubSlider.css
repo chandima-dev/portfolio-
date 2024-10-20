@@ -102,7 +102,8 @@
 
     .sub-slideshow-text {
         position: absolute;
-        top: 80%; /* Center vertically */
+        top: 50%; /* Center vertically */
+        margin-top: -20px;
         left: 50%;
         transform: translate(-50%, -50%); /* Center horizontally */
         font-size: 35px; /* Set font size to 35px */
@@ -126,7 +127,8 @@
         opacity: 0;
         animation: text-slide-up 1.5s forwards; /* Updated animation */
         width: 80%; /* Take more space left and right */
-        margin: 0 auto; /* Center the paragraph */
+        margin-top: -15px;
+
     }
 
     .sub-slide {
