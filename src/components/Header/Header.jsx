@@ -52,9 +52,10 @@ const Header = () => {
         </div>
       </div>
       <header className={styles.header}>
-        <div className={styles.logo}>
-          <span>Falcon Engineering</span>
-        </div>
+      <div className={styles.logo}>
+        <span className={styles.falconengineering}>Falcon Engineering &</span>
+        <span className={styles.architects}>Architects</span>
+      </div>
         <div className={styles.menuToggle} onClick={toggleMenu}>
           {isOpen ? (
             <div className={styles.closeButton}>
