@@ -7,6 +7,7 @@ import HomeProjects from '../../components/HomeProjects/HomeProjects';
 import HomServices from '../../components/HomeServices/HomServices';
 import HomeBottom from '../../components/HomeBottom/HomeBottom';
 import HomeOverall from '../../components/HomeOverall/HomeOverall';
+import HomeAboutus from '../../components/HomeAboutus/HomeAboutus';
 
 const Slideshow = () => {
 
@@ -15,6 +16,7 @@ const Slideshow = () => {
       {/* <p>testing</p> This is just a placeholder. You can replace it with the actual slider component */}
       <HomeOverall />
       <HomServices />
+      <HomeAboutus />
       <HomeProjects  />
       <HomeBottom  />
     </div>

@@ -13,6 +13,7 @@ import HomeProjects from './components/HomeProjects/HomeProjects';
 import HomServices from './components/HomeServices/HomServices'; 
 import HomeBottom from './components/HomeBottom/HomeBottom'; 
 import HomeOverall from './components/HomeOverall/HomeOverall'; 
+import HomeAboutus from './components/HomeAboutus/HomeAboutus'; 
 
 const App = () => {
   return (

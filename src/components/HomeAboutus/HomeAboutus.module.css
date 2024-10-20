@@ -1,0 +1,101 @@
+/* HomeAboutus.module.css */
+
+.container {
+  width: 100%;
+  height: 70vh; /* Cover 3/4 of the page height */
+  background-color: rgb(43, 41, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center; /* Center the text inside the content container */
+  max-width: 1000px;
+  margin-top: -50px;
+}
+
+/* Animation Class */
+.animate {
+  animation: slideIn 3.5s ease forwards;
+}
+
+/* Keyframes for Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateY(140%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-size: 50px;
+  margin: 50px 0; /* Optional margin */
+  color: white;
+  text-align: center; 
+}
+
+.subtitle {
+  font-size: 60px;
+  margin: 50px 0; /* Optional margin */
+  color: #FF7F00;
+  text-align: center;  
+}
+
+.description1 {
+  font-size: 20px;
+  margin: 10px 0; /* Optional margin */
+  color: white;
+  text-align: justify; 
+  line-height: 1.4; /* Adjust this value for line gap */
+}
+
+.description2 {
+  font-size: 20px;
+  margin: 20px 0; /* Optional margin */
+  color: white;
+  text-align: justify; 
+  line-height: 1.4; /* Adjust this value for line gap */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px; /* Adjust title size for mobile */
+    margin: 30px 0; /* Adjust margin for mobile */
+  }
+
+  .subtitle {
+    font-size: 40px; /* Adjust subtitle size for mobile */
+    margin: 30px 0; /* Adjust margin for mobile */
+  }
+
+  .description1, .description2 {
+    font-size: 16px; /* Adjust description size for mobile */
+    margin: 10px 0; /* Optional margin */
+  }
+
+  .content {
+    margin-top: 1px;
+    text-align: center; /* Ensure text is centered on smaller screens */
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+    height: auto; /* Cover full height on mobile */
+    background-color: rgb(43, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Animation Class */
+.animate {
+  animation: slideIn 3.5s ease forwards;
+}
+}
