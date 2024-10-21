@@ -33,7 +33,7 @@ const CardView = () => {
           const index = Number(entry.target.dataset.index);
           setTimeout(() => {
             setVisibleCards((prev) => [...prev, index]);
-          }, index * 450); // Adjust timing for one-by-one loading
+          }, index * 150); // Adjust timing for one-by-one loading
         }
       });
     }, observerOptions);

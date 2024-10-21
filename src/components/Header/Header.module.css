@@ -50,14 +50,14 @@
 
 .falconengineering {
   color: #A0A0A0; /* Dark Silver color */
-  font-size: 55px; /* Adjust size as needed */
+  font-size: 45px; /* Adjust size as needed */
   font-weight: bold;
   display: inline; /* Keep them on the same line in web view */
 }
 
 .architects {
   color: #FF7F00; /* Orange color */
-  font-size: 35px; /* Smaller font size for Architects */
+  font-size: 32px; /* Smaller font size for Architects */
   font-weight: bold;
   margin-left: 5px; /* Optional spacing */
 }
