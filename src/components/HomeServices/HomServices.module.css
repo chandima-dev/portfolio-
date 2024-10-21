@@ -101,6 +101,13 @@
         box-shadow: 0 0 10px #FF7F00; /* Optional: Add shadow effect on hover */
         transform: translateY(-8px); /* Move the card up by 2 pixels */
     }
+    .mainTitle {
+        color: #ffffff; /* Change this to your desired color */
+        font-size: 30px; /* Set the font size */
+        margin-bottom: 30px; /* Add some space below the title */
+        text-align: center; /* Center the title */
+        margin-top:50px;
+    }
 
 }
 

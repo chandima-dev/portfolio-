@@ -82,6 +82,7 @@
 
   .headings {
     font-size: 20px; /* Adjust font size for smaller screens */
+    margin-bottom: 10px;
   }
 
   .overlay {
