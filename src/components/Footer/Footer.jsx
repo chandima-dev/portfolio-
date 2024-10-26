@@ -17,7 +17,7 @@ const Footer = () => {
           <h4>Contact Info</h4>
           <br />
           <p><FaMapMarkerAlt /> No. 121/C, Surigama, Kadawatha 11850, Sri Lanka</p>
-          <p><FaEnvelope /> <a href="mailto:falconengnarchitects@gmail.com">falconengnarchitects@gmail.com</a></p>
+          <p><FaEnvelope /> <a href="mailto:info@falcondesigns.com.lk">info@falcondesigns.com.lk</a></p>
           <p><FaPhone /> <a href="tel:+94728130647">+94 72 813 0647</a></p>
           <p><FaPhone /> <a href="tel:+94770155918">+94 77 015 5918</a></p>
         </div>

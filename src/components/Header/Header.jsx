@@ -42,8 +42,8 @@ const Header = () => {
             </a>
           </span>
           <span>
-            <a href="mailto:falconengnarchitects@gmail.com">
-              <FaEnvelope /> falconengnarchitects@gmail.com
+            <a href="mailto:info@falcondesigns.com.lk">
+              <FaEnvelope /> info@falcondesigns.com.lk
             </a>
           </span>
           <span>

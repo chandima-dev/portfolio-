@@ -1,4 +1,5 @@
 .header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #181419;
@@ -26,6 +27,12 @@
   margin-top: 5px;
 }
 
+.contactInfo a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer; /* Ensures link is clickable */
+}
+
 .contactInfo span {
   margin-left: 20px;
   display: inline-flex;
@@ -35,12 +42,6 @@
 .contactInfo span svg {
   margin-right: 5px;
 }
-
-.contactInfo a {
-  color: inherit;          /* Inherit color from parent */
-  text-decoration: none;   /* Remove underline */
-}
-
 .logo {
   display: flex;
   flex-direction: column; /* Stack items in mobile view */
@@ -77,7 +78,8 @@
   padding: 0;
   justify-content: center;
   flex-grow: 1;
-  margin-top: -3vh;
+  margin-top: 3vh;
+  margin-left: -50vh;
 }
 
 .navbar ul li {
