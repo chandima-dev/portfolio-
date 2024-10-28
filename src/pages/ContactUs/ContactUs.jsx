@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   StyledContainer,
   StyledFormSection,
@@ -22,20 +24,39 @@ const ContactUs = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_fb7rcsw', 'template_2up9bic', form.current, 'KKfkGJZKt5unB2lB-')
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_USER_ID
+      )
       .then(
         (result) => {
-          console.log('Message sent successfully!', result.text);
-          alert('Message sent successfully!');
+          toast.success('Message sent successfully!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          form.current.reset();
         },
         (error) => {
-          console.log('Failed to send message:', error.text);
-          alert('Failed to send message. Please try again later.');
+          toast.error('Failed to send message. Please try again later.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       );
   };
 
-  // Scroll to top on component mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -94,6 +115,9 @@ const ContactUs = () => {
           </StyledSocialIcon>
         </div>
       </StyledSocialSection>
+
+      {/* Toast Container for Notifications */}
+      <ToastContainer />
     </>
   );
 };

@@ -47,6 +47,7 @@
   flex-direction: column; /* Stack items in mobile view */
   align-items: left; /* Align text to the left */
   margin-top: -20px;
+  margin-bottom: -10px;
 }
 
 .falconengineering {
@@ -78,7 +79,7 @@
   padding: 0;
   justify-content: center;
   flex-grow: 1;
-  margin-top: 3vh;
+  margin-top: 5vh;
   margin-left: -50vh;
 }
 
@@ -112,10 +113,9 @@
 .socialMedia {
   position: absolute;  /* Positions social media icons at the top right */
   right: 40px;         /* Adjust this value based on padding/margin */
-  top: 50%;            /* Center vertically */
+  top: 65%;            /* Center vertically */
   transform: translateY(-50%);
   display: flex;
-  margin-bottom: 3%;
 }
 
 .socialMedia a {
