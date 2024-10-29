@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,8 +17,49 @@ import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import SubSlider from '../../components/SubSlider/SubSlider';
 
+// Custom Mobile Toast Component
+const MobileToast = ({ message, onClose }) => {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 3000); // Toast disappears after 3 seconds
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <div className="mobile-toast">
+      {message}
+      <style jsx>{`
+        .mobile-toast {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #333;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 20px;
+          font-size: 14px;
+          opacity: 0.9;
+          text-align: center;
+          z-index: 1000;
+        }
+      `}</style>
+    </div>
+  );
+};
+
 const ContactUs = () => {
   const form = useRef();
+  const [mobileToast, setMobileToast] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Detect mobile view initially
+
+  // Update `isMobile` when window is resized
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -31,28 +72,36 @@ const ContactUs = () => {
         import.meta.env.VITE_EMAILJS_USER_ID
       )
       .then(
-        (result) => {
-          toast.success('Message sent successfully!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+        () => {
+          if (isMobile) {
+            setMobileToast("Message sent successfully!");
+          } else {
+            toast.success("Message sent successfully!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          }
           form.current.reset();
         },
-        (error) => {
-          toast.error('Failed to send message. Please try again later.', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+        () => {
+          if (isMobile) {
+            setMobileToast("Failed to send message. Please try again.");
+          } else {
+            toast.error("Failed to send message. Please try again later.", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          }
         }
       );
   };
@@ -116,8 +165,14 @@ const ContactUs = () => {
         </div>
       </StyledSocialSection>
 
-      {/* Toast Container for Notifications */}
-      <ToastContainer />
+      {/* Toast Containers for Web and Mobile */}
+      {!isMobile && <ToastContainer />}
+      {isMobile && mobileToast && (
+        <MobileToast
+          message={mobileToast}
+          onClose={() => setMobileToast(null)}
+        />
+      )}
     </>
   );
 };
