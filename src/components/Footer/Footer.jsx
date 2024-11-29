@@ -42,6 +42,35 @@ const Footer = () => {
         </div>
 
         <div className={styles.footerSection}>
+          <h4>Payment Methods</h4>
+          <div className={styles.paymentMethods}>
+            <ul className={styles.paymentList}>
+              <li>
+                <img 
+                  src="/images/payments/paypal_1.jpg" 
+                  alt="PayPal" 
+                  className={styles.paymentLogo} 
+                />
+              </li>
+              <li>
+                <img 
+                  src="/images/payments/WesternUnion.png" 
+                  alt="Western Union" 
+                  className={styles.paymentLogo} 
+                />
+              </li>
+              <li>
+                <img 
+                  src="/images/payments/Payoneer-2-886x590.png" 
+                  alt="Payoneer" 
+                  className={styles.paymentLogo} 
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className={styles.footerSection}>
           <h4 className={styles.newsletterTitle}>Newsletter</h4>
           <br />
           <p style={{ textAlign: 'center' }}>
